@@ -13,7 +13,7 @@
                             <th>Doctor Name</th>
                             <th>Speciality</th>
                             <th>Patient Name</th>
-                            <th>Apointment Time</th>
+                            <th>Appointment Time</th>
                             <th>Status</th>
                             <th class="text-right">Amount</th>
                         </tr>
