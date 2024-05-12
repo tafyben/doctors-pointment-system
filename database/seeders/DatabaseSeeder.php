@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
 
         Role::create(['name'=>'doctor']);
         Role::create(['name'=>'admin']);
-        Role::create(['name'=>'patience']);
+        Role::create(['name'=>'patient']);
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
