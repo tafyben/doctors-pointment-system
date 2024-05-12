@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->string('education')->nullable();
             $table->text('description')->nullable();
-            $table->string('dender');
+            $table->string('gender');
             $table->rememberToken();
             $table->timestamps();
         });
