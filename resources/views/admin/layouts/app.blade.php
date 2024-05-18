@@ -18,6 +18,9 @@
     <!-- Feathericon CSS -->
     <link rel="stylesheet" href="{{asset('admin/assets/css/feathericon.min.css')}}">
 
+    <!-- Select2 CSS -->
+    <link rel="stylesheet" href="{{asset('admin/assets/css/select2.min.css')}}">
+
     <link rel="stylesheet" href="{{asset('admin/assets/plugins/morris/morris.css')}}">
 
     <!-- Main CSS -->
@@ -198,6 +201,8 @@
 
 <script src="{{asset('admin/assets/plugins/raphael/raphael.min.js')}}"></script>
 <script src="{{asset('admin/assets/plugins/morris/morris.min.js')}}"></script>
+<!-- Select2 JS -->
+<script src="{{asset('admin/assets/js/select2.min.js')}}"></script>
 <script src="{{asset('admin/assets/js/chart.morris.js')}}"></script>
 
 <!-- Custom JS -->
