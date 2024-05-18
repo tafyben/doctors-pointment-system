@@ -21,7 +21,8 @@
                     <h4 class="card-title">Create Form</h4>
                 </div>
                 <div class="card-body">
-                    <form action="#">
+                    <form action="{{route('doctor.store')}}">
+                        @csrf
                         <div class="row">
                             <div class="col-md-12">
                                 <h4 class="card-title">Personal details</h4>
