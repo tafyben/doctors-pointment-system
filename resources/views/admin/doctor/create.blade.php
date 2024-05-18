@@ -29,13 +29,13 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Full Name:</label>
-                                            <input type="text" class="form-control">
+                                            <input type="text" class="form-control" name="fullname">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Email:</label>
-                                            <input type="email" class="form-control">
+                                            <input type="email" class="form-control" name="email">
                                         </div>
                                     </div>
                                 </div>
@@ -43,21 +43,32 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Password:</label>
-                                            <input type="password" class="form-control">
+                                            <input type="password" class="form-control" name="password">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Phone:</label>
-                                            <input type="text" class="form-control">
+                                            <input type="text" class="form-control" name="phone">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-12">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Address line:</label>
-                                            <input type="text" class="form-control">
+                                            <input type="text" class="form-control" name="address">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Role:</label>
+                                            <select class="select" name="role_id">
+                                                <option>Select Role</option>
+                                                @foreach(App\Models\Role::get() as $role)
+                                                    <option value="{{$role->id}}">{{$role->name}}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
@@ -65,7 +76,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Gender:</label>
-                                            <select class="select">
+                                            <select class="select" name="gender">
                                                 <option>Select Gender</option>
                                                 <option value="1">Male</option>
                                                 <option value="2">Female</option>
@@ -75,7 +86,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Specialist:</label>
-                                            <input type="text" class="form-control">
+                                            <input type="text" class="form-control" name="specialist">
                                         </div>
                                     </div>
                                 </div>
@@ -83,19 +94,19 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Education:</label>
-                                            <input type="text" class="form-control">
+                                            <input type="text" class="form-control" name="education">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Image:</label>
-                                            <input type="file" class="form-control">
+                                            <input type="file" class="form-control" name="image">
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                     <div class="form-group">
                                         <label>About:</label>
-                                        <textarea rows="5" cols="5" class="form-control" placeholder="Enter message"></textarea>
+                                        <textarea rows="5" cols="5" class="form-control" placeholder="Enter message" name="about"></textarea>
                                     </div>
                                     </div>
                         </div>
