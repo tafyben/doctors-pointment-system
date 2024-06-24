@@ -21,7 +21,7 @@
                     <h4 class="card-title">Create Form</h4>
                 </div>
                 <div class="card-body">
-                    <form action="{{route('doctor.store')}}" method="POST">
+                    <form action="{{route('doctor.store')}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
                             <div class="col-md-12">
@@ -30,12 +30,12 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Full Name:</label>
-                                            <input type="text" class="form-control @error('fullname') is-invalid @enderror" name="fullname">
+                                            <input type="text" class="form-control @error('name') is-invalid @enderror" name="name">
                                         </div>
-                                        @error('fullname')
+                                        @error('name')
                                         <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                            <strong>{{ $message }}</strong>
+                                        </span>
                                         @enderror
                                     </div>
                                     <div class="col-md-6">
@@ -65,9 +65,9 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Phone:</label>
-                                            <input type="text" class="form-control @error('phone') is-invalid @enderror" name="phone">
+                                            <input type="text" class="form-control @error('phone_number') is-invalid @enderror" name="phone_number">
                                         </div>
-                                        @error('phone')
+                                        @error('phone_number')
                                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -156,10 +156,10 @@
                                     </div>
                                     <div class="col-md-12">
                                     <div class="form-group">
-                                        <label>About:</label>
-                                        <textarea rows="5" cols="5" class="form-control" placeholder="Enter message" name="about"></textarea>
+                                        <label>Descrition:</label>
+                                        <textarea rows="5" cols="5" class="form-control" placeholder="Enter message" name="description"></textarea>
                                     </div>
-                                        @error('about')
+                                        @error('description')
                                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

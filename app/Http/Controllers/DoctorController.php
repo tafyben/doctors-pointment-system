@@ -27,7 +27,19 @@ class DoctorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+                'name'=>'required',
+                'email'=>'required|unique:users',
+                'password'=>'required|min:6|max:25',
+                'gender'=>'required',
+                'education'=>'required',
+                'address'=>'required',
+                'department'=>'required',
+                'phone_number'=>'required|numeric',
+                'image'=>'required|mimes:jpeg.jpg,png',
+                'role_id'=>'required',
+                'description'=>'required'
+            ]);
     }
 
     /**
