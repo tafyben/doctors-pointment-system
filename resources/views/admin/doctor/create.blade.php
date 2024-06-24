@@ -16,6 +16,12 @@
     <!-- /Page Header -->
     <div class="row">
         <div class="col-md-12">
+
+            @if(Session::has('message'))
+                <div class="alert alert-success">
+                    {{Session::get('message')}}
+                </div>
+            @endif
             <div class="card">
                 <div class="card-header">
                     <h4 class="card-title">Create Form</h4>
