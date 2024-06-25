@@ -22,7 +22,8 @@
     <link rel="stylesheet" href="{{asset('admin/assets/css/select2.min.css')}}">
 
     <link rel="stylesheet" href="{{asset('admin/assets/plugins/morris/morris.css')}}">
-
+    <!-- Datatables CSS -->
+    <link rel="stylesheet" href="{{asset('admin/assets/plugins/datatables/datatables.min.css')}}">
     <!-- Main CSS -->
     <link rel="stylesheet" href="{{asset('admin/assets/css/style.css')}}">
 
@@ -205,6 +206,9 @@
 <script src="{{asset('admin/assets/js/select2.min.js')}}"></script>
 <script src="{{asset('admin/assets/js/chart.morris.js')}}"></script>
 
+<!-- Datatables JS -->
+<script src="{{asset('admin/assets/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('admin/assets/plugins/datatables/datatables.min.js')}}"></script>
 <!-- Custom JS -->
 <script  src="{{asset('admin/assets/js/script.js')}}"></script>
 
