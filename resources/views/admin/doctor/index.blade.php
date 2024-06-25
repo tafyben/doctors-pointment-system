@@ -30,41 +30,51 @@
                                 <th>Avatar</th>
                                 <th>Name</th>
                                 <th>Email</th>
+                                <th>Department</th>
                                 <th>Address</th>
                                 <th>Phone Number</th>
                                 <th class="text-right">Actions</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>#SP001</td>
+                            @if(count($doctors)>0)
+                                @foreach($doctors as $user)
+                                <tr>
+                                    <td>{{$user->id}}</td>
 
-                                <td>
-                                    <h2 class="table-avatar">
-                                        <a href="profile.html" class="avatar avatar-sm mr-2">
-                                            <img class="avatar-img" src="{{asset('admin/assets/img/specialities/specialities-01.png')}}" alt="Speciality">
-                                        </a>
-                                        <a href="profile.html">Urology</a>
-                                    </h2>
-                                </td>
+                                    <td>
+                                        <h2 class="table-avatar">
+                                            <a href="profile.html" class="avatar avatar-sm mr-2">
+                                                <img class="avatar-img" src="{{asset('images')}}/{{$user->image}}" alt="{{$user->gender}}">
+                                            </a>
+                                            <a href="profile.html">{{$user->gender}}</a>
+                                        </h2>
+                                    </td>
 
-                                <td>Tafadzwa Ben</td>
-                                <td>b@doc.com</td>
-                                <td>Hello street</td>
-                                <td>263452189</td>
+                                    <td>{{$user->name}}</td>
+                                    <td>{{$user->email}}</td>
+                                    <td>{{$user->department}}</td>
+                                    <td>{{$user->address}}</td>
+                                    <td>{{$user->phone_number}}</td>
 
 
-                                <td class="text-right">
-                                    <div class="actions">
-                                        <a class="btn btn-sm bg-success-light" data-toggle="modal" href="#edit_specialities_details">
-                                            <i class="fe fe-pencil"></i> Edit
-                                        </a>
-                                        <a  data-toggle="modal" href="#delete_modal" class="btn btn-sm bg-danger-light">
-                                            <i class="fe fe-trash"></i> Delete
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
+                                    <td class="text-right">
+                                        <div class="actions">
+                                            <a class="btn btn-sm bg-success-light" data-toggle="modal" href="#edit_specialities_details">
+                                                <i class="fe fe-pencil"></i> Edit
+                                            </a>
+                                            <a  data-toggle="modal" href="#delete_modal" class="btn btn-sm bg-danger-light">
+                                                <i class="fe fe-trash"></i> Delete
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                @endforeach
+
+                            @else
+                                <td>No users found</td>
+                            @endif
+
 
                             </tbody>
                         </table>

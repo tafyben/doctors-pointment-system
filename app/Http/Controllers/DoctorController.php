@@ -12,7 +12,8 @@ class DoctorController extends Controller
      */
     public function index()
     {
-        return view('admin.doctor.index');
+        $doctors = User::get();
+        return view('admin.doctor.index', compact('doctors'));
     }
 
     /**
@@ -85,7 +86,7 @@ class DoctorController extends Controller
             'address'=>'required',
             'department'=>'required',
             'phone_number'=>'required|numeric',
-            'image'=>'required|mimes:jpeg.jpg,png',
+            'image'=>'required|mimes:jpeg,jpg,png',
             'role_id'=>'required',
             'description'=>'required'
         ]);
