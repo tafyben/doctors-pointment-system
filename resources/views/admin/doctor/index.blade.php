@@ -22,22 +22,23 @@
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-body">
-                    <table id="example" class="table table-hover  table-bordered" style="width:100%">
-                        <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Avatar</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Department</th>
-                            <th>Address</th>
-                            <th>Phone Number</th>
-                            <th class="text-right">Actions</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        @if(count($doctors)>0)
-                            @foreach($doctors as $user)
+                    <div class="table-responsive">
+                        <table class="datatable table table-hover table-center mb-0">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Avatar</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Department</th>
+                                <th>Address</th>
+                                <th>Phone Number</th>
+                                <th class="text-right">Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @if(count($doctors)>0)
+                                @foreach($doctors as $user)
                                 <tr>
                                     <td>{{$user->id}}</td>
 
@@ -59,11 +60,8 @@
 
                                     <td class="text-right">
                                         <div class="actions">
-                                            <a class="btn btn-sm bg-primary-light" data-toggle="modal" href="#edit_specialities_details{{$user->id}}">
+                                            <a class="btn btn-sm bg-primary-light" data-toggle="modal" href="#view_details{{$user->id}}">
                                                 <i class="fe fe-eye"></i> View
-                                            </a>
-                                            <a class="btn btn-sm bg-success-light" data-toggle="modal" href="#edit_specialities_details{{$user->id}}">
-                                                <i class="fe fe-pencil"></i> Edit
                                             </a>
                                             <a  data-toggle="modal" href="#delete_modal" class="btn btn-sm bg-danger-light">
                                                 <i class="fe fe-trash"></i> Delete
@@ -71,15 +69,18 @@
                                         </div>
                                     </td>
                                 </tr>
-                            @endforeach
 
-                        @else
-                            <td>No users found</td>
-                        @endif
+                                    @include('admin.doctor.modal')
+                                @endforeach
+
+                            @else
+                                <td>No users found</td>
+                            @endif
 
 
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
