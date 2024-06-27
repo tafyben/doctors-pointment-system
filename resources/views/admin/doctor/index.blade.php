@@ -60,7 +60,7 @@
 
                                     <td class="text-right">
                                         <div class="actions">
-                                            <a class="btn btn-sm bg-success-light" data-toggle="modal" href="#edit_specialities_details">
+                                            <a class="btn btn-sm bg-success-light" data-toggle="modal" href="#edit_specialities_details{{$user->id}}">
                                                 <i class="fe fe-pencil"></i> Edit
                                             </a>
                                             <a  data-toggle="modal" href="#delete_modal" class="btn btn-sm bg-danger-light">
@@ -85,7 +85,7 @@
     </div>
 
 
-    <!-- Add Modal -->
+    <!-- add user modal-->
     <div class="modal fade" id="Add_Specialities_details" aria-hidden="true" role="dialog">
         <div class="modal-dialog modal-dialog-centered" role="document" >
             <div class="modal-content">
@@ -118,42 +118,11 @@
             </div>
         </div>
     </div>
-    <!-- /ADD Modal -->
+    <!-- add user modal -->
 
-    <!-- Edit Details Modal -->
-    <div class="modal fade" id="edit_specialities_details" aria-hidden="true" role="dialog">
-        <div class="modal-dialog modal-dialog-centered" role="document" >
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Edit Specialities</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="row form-row">
-                            <div class="col-12 col-sm-6">
-                                <div class="form-group">
-                                    <label>Specialities</label>
-                                    <input type="text" class="form-control" value="Cardiology">
-                                </div>
-                            </div>
-                            <div class="col-12 col-sm-6">
-                                <div class="form-group">
-                                    <label>Image</label>
-                                    <input type="file"  class="form-control">
-                                </div>
-                            </div>
-
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-block">Save Changes</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- /Edit Details Modal -->
+    <!-- edit details modal -->
+        @include('admin.doctor.modal')
+    <!-- edit details modal -->
 
     <!-- Delete Modal -->
     <div class="modal fade" id="delete_modal" aria-hidden="true" role="dialog">
