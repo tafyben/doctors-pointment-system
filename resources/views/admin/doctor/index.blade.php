@@ -60,6 +60,9 @@
 
                                     <td class="text-right">
                                         <div class="actions">
+                                            <a class="btn btn-sm bg-primary-light" data-toggle="modal" href="#edit_specialities_details{{$user->id}}">
+                                                <i class="fe fe-eye"></i> View
+                                            </a>
                                             <a class="btn btn-sm bg-success-light" data-toggle="modal" href="#edit_specialities_details{{$user->id}}">
                                                 <i class="fe fe-pencil"></i> Edit
                                             </a>
