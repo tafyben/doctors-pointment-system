@@ -69,7 +69,7 @@
                                         </div>
                                     </td>
                                 </tr>
-
+                                    <!-- this is why the other buttons where not working (it has to be included in all the files) -->
                                     @include('admin.doctor.modal')
                                 @endforeach
 

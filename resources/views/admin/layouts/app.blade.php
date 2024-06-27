@@ -155,13 +155,21 @@
                             <img src="{{asset('admin/assets/img/profiles/avatar-01.jpg')}}" alt="User Image" class="avatar-img rounded-circle">
                         </div>
                         <div class="user-text">
-                            <h6>Ryan Taylor</h6>
-                            <p class="text-muted mb-0">Administrator</p>
+                            <h6> {{ Auth::user()->name }}</h6>
+                            <p class="text-muted mb-0"> {{ Auth::user()->role->name }}</p>
                         </div>
                     </div>
                     <a class="dropdown-item" href="profile.html">My Profile</a>
                     <a class="dropdown-item" href="settings.html">Settings</a>
-                    <a class="dropdown-item" href="login.html">Logout</a>
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
                 </div>
             </li>
             <!-- user navbar -->
