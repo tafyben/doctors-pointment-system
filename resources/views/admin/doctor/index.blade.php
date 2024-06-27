@@ -22,23 +22,22 @@
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="datatable table table-hover table-center mb-0">
-                            <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Avatar</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Department</th>
-                                <th>Address</th>
-                                <th>Phone Number</th>
-                                <th class="text-right">Actions</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            @if(count($doctors)>0)
-                                @foreach($doctors as $user)
+                    <table id="example" class="table table-hover  table-bordered" style="width:100%">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Avatar</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Department</th>
+                            <th>Address</th>
+                            <th>Phone Number</th>
+                            <th class="text-right">Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @if(count($doctors)>0)
+                            @foreach($doctors as $user)
                                 <tr>
                                     <td>{{$user->id}}</td>
 
@@ -72,16 +71,15 @@
                                         </div>
                                     </td>
                                 </tr>
-                                @endforeach
+                            @endforeach
 
-                            @else
-                                <td>No users found</td>
-                            @endif
+                        @else
+                            <td>No users found</td>
+                        @endif
 
 
-                            </tbody>
-                        </table>
-                    </div>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

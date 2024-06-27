@@ -209,8 +209,18 @@
 <!-- Datatables JS -->
 <script src="{{asset('admin/assets/plugins/datatables/jquery.dataTables.min.js')}}"></script>
 <script src="{{asset('admin/assets/plugins/datatables/datatables.min.js')}}"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
+<script src="https://cdn.datatables.net/2.0.8/js/dataTables.bootstrap4.js"></script>
 <!-- Custom JS -->
 <script  src="{{asset('admin/assets/js/script.js')}}"></script>
+
+<script>
+    new DataTable('#example');
+    let table = new DataTable('#doc_datatable');
+</script>
 
 </body>
 
