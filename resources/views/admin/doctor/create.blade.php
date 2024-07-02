@@ -31,7 +31,7 @@
                         @csrf
                         <div class="row">
                             <div class="col-md-12">
-                                <h4 class="card-title">Personal details</h4>
+                                <h4 class="card-title">Doctor details</h4>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
