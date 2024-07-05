@@ -23,10 +23,10 @@
                     </ul>
                 </li>
                 <li class="submenu">
-                    <a href="#"><i class="fe fe-user-plus"></i> <span> Doctors</span> <span class="menu-arrow"></span></a>
+                    <a href="#"><i class="fe fe-user-plus"></i> <span> Users</span> <span class="menu-arrow"></span></a>
                     <ul style="display: none;">
-                        <li><a href="#">All Doctors</a></li>
-                        <li><a href="#">Add Doctor</a></li>
+                        <li><a href="{{route('doctor.index')}}">All Users</a></li>
+                        <li><a href="#">Add User</a></li>
                     </ul>
                 </li>
                 <li class="submenu">
