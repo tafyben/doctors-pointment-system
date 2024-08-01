@@ -49,7 +49,8 @@ class DoctorController extends Controller
      */
     public function show(string $id)
     {
-        //
+       /* $user = User::find($id);
+        return view('admin.doctor.delete',compact('user'));*/
     }
 
     /**
@@ -67,7 +68,24 @@ class DoctorController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $this->validateUpdate($request,$id);
+        $data = $request->all();
+        $user = User::find($id);
+        $imageName = $user->image;
+        $userPassword = $user->password;
+        if($request->hasFile('image')){
+            $image = $request->file('image');
+            $imageName = $image->hashName();
+            unlink(public_path('images/'.$user->image));
+        }
+        $data['image'] = $imageName;
+        if($request->password){
+            $data['password'] = bcrypt($request->password);
+        }else{
+            $data['password'] = $userPassword;
+        }
+        $user->update($data);
+        return redirect()->route('doctor.index')->with('message','Doctor updated successfully');
     }
 
     /**
@@ -75,7 +93,15 @@ class DoctorController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        if(auth()->user()->id == $id){
+            abort(401);
+        }
+        $user = User::find($id);
+        $userDelete = $user->delete();
+        if($userDelete){
+            unlink(public_path('images/'.$user->image));
+        }
+        return redirect()->route('doctor.index')->with('message','Doctor deleted successfully');
     }
 
     // method that validated all the details required to be stored in database
@@ -90,6 +116,21 @@ class DoctorController extends Controller
             'department'=>'required',
             'phone_number'=>'required|numeric',
             'image'=>'required|mimes:jpeg,jpg,png',
+            'role_id'=>'required',
+            'description'=>'required'
+        ]);
+    }
+
+    public function validateUpdate($request, $id){
+        return $this->validate($request, [
+            'name'=>'required',
+            'email'=>'required|unique:users,email,'.$id,
+            'gender'=>'required',
+            'education'=>'required',
+            'address'=>'required',
+            'department'=>'required',
+            'phone_number'=>'required|numeric',
+            'image'=>'mimes:jpeg,jpg,png',
             'role_id'=>'required',
             'description'=>'required'
         ]);

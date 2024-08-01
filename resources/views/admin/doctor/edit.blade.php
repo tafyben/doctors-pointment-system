@@ -194,7 +194,7 @@
                             </div>
                     </div>
                         <div class="text-right">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary">Update</button>
                         </div>
                     </form>
                 </div>

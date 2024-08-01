@@ -23,6 +23,11 @@
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-body">
+                    @if(Session::has('message'))
+                        <div class="alert bg-success alert-success text-white" role="alert">
+                            {{Session::get('message')}}
+                        </div>
+                    @endif
                     <div class="table-striped-columns">
                         <!-- some changed can noted down below, not everything will need to be included meet-->
                         <table class="datatable table table-hover table-center mb-0">
