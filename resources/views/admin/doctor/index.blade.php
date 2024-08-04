@@ -13,8 +13,12 @@
                     <li class="breadcrumb-item active">Doctors</li>
                 </ul>
             </div>
-            <div class="col-sm-5 col">
+            {{--<div class="col-sm-5 col">
                 <a href="#Add_Specialities_details" data-toggle="modal" class="btn btn-primary float-right mt-2">Add</a>
+            </div>--}}
+
+            <div class="col-sm-5 col">
+                <a href="{{route('doctor.create')}}" class="btn btn-primary float-right mt-2">Add</a>
             </div>
         </div>
     </div>
