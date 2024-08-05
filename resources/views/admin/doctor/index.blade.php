@@ -77,7 +77,10 @@
                                             <a class="btn btn-sm bg-purple-light" href="{{route('doctor.edit', $user->id)}}">
                                                 <i class="fe fe-pencil"></i>
                                             </a>
-                                            <a  data-toggle="modal" href="#delete_modal" class="btn btn-sm bg-danger-light">
+                                            {{--<a  data-toggle="modal" href="#delete_modal" class="btn btn-sm bg-danger-light">
+                                                <i class="fe fe-trash"></i>
+                                            </a>--}}
+                                            <a href="{{route('doctor.show', [$user->id])}}" class="btn btn-sm bg-danger-light">
                                                 <i class="fe fe-trash"></i>
                                             </a>
                                         </div>

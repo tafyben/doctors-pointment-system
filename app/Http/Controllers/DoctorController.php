@@ -46,8 +46,8 @@ class DoctorController extends Controller
      */
     public function show(string $id)
     {
-       /* $user = User::find($id);
-        return view('admin.doctor.delete',compact('user'));*/
+        $user = User::find($id);
+        return view('admin.doctor.delete',compact('user'));
     }
 
     /**
