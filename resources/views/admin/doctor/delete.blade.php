@@ -36,12 +36,10 @@
 
                             </div>
                         </div>
-                        <div class="text-left">
-                            <button type="submit" class="btn btn-primary">Delete</button>
-                        </div>
-                        <div class="text-right">
-                            <a href="{{route('doctor.index')}}" class="btn btn-secondary">Cancel</a>
-                        </div>
+                       <div class="card-footer">
+                               <button type="submit" class="btn btn-primary mr-2">Delete</button>
+                               <a href="{{route('doctor.index')}}" class="btn btn-secondary">Cancel</a>
+                       </div>
                     </form>
                 </div>
             </div>
