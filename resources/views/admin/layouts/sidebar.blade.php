@@ -37,16 +37,16 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="reviews.html"><i class="fe fe-star-o"></i> <span>Reviews</span></a>
+                    <a href="#"><i class="fe fe-star-o"></i> <span>Reviews</span></a>
                 </li>
                 <li>
-                    <a href="transactions-list.html"><i class="fe fe-activity"></i> <span>Transactions</span></a>
+                    <a href="#"><i class="fe fe-activity"></i> <span>Transactions</span></a>
                 </li>
                 <li class="menu-title">
                     <span>Pages</span>
                 </li>
                 <li>
-                    <a href="profile.html"><i class="fe fe-user-plus"></i> <span>Profile</span></a>
+                    <a href="#"><i class="fe fe-user-plus"></i> <span>Profile</span></a>
                 </li>
             </ul>
         </div>
