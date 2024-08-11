@@ -6,7 +6,7 @@
                     <span>Main</span>
                 </li>
                 <li class="active">
-                    <a href="index.html"><i class="fe fe-home"></i> <span>Dashboard</span></a>
+                    <a href="#"><i class="fe fe-home"></i> <span>Dashboard</span></a>
                 </li>
                 <li class="submenu">
                     <a href="#"><i class="fe fe-layout"></i> <span> Appointments</span> <span class="menu-arrow"></span></a>
