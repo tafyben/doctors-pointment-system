@@ -154,13 +154,17 @@
                         <div class="avatar avatar-sm">
                             <img src="{{asset('admin/assets/img/profiles/avatar-01.jpg')}}" alt="User Image" class="avatar-img rounded-circle">
                         </div>
+                        <!-- show authenticated username and role here start -->
                         <div class="user-text">
                             <h6> {{ Auth::user()->name }}</h6>
                             <p class="text-muted mb-0"> {{ Auth::user()->role->name }}</p>
                         </div>
+                        <!-- show authenticated username and role here end -->
                     </div>
+                    <!-- profile page view link to be placed here -->
                     <a class="dropdown-item" href="#">My Profile</a>
                     <a class="dropdown-item" href="#">Settings</a>
+                    <!-- Logout functionality  -->
                     <a class="dropdown-item" href="{{ route('logout') }}"
                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
