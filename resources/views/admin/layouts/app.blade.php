@@ -42,10 +42,10 @@
 
         <!-- Logo -->
         <div class="header-left">
-            <a href="index.html" class="logo">
+            <a href="#" class="logo">
                 <img src="{{asset('admin/assets/img/logo.png')}}" alt="Logo">
             </a>
-            <a href="index.html" class="logo logo-small">
+            <a href="#" class="logo logo-small">
                 <img src="{{asset('admin/assets/img/logo-small.png')}}" alt="Logo" width="30" height="30">
             </a>
         </div>
@@ -109,32 +109,7 @@
                                     </div>
                                 </a>
                             </li>
-                            <li class="notification-message">
-                                <a href="#">
-                                    <div class="media">
-												<span class="avatar avatar-sm">
-													<img class="avatar-img rounded-circle" alt="User Image" src="{{asset('admin/assets/img/patients/patient2.jpg')}}">
-												</span>
-                                        <div class="media-body">
-                                            <p class="noti-details"><span class="noti-title">Travis Trimble</span> sent a amount of $210 for his <span class="noti-title">appointment</span></p>
-                                            <p class="noti-time"><span class="notification-time">8 mins ago</span></p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="notification-message">
-                                <a href="#">
-                                    <div class="media">
-												<span class="avatar avatar-sm">
-													<img class="avatar-img rounded-circle" alt="User Image" src="{{asset('admin/assets/img/patients/patient3.jpg')}}">
-												</span>
-                                        <div class="media-body">
-                                            <p class="noti-details"><span class="noti-title">Carl Kelly</span> send a message <span class="noti-title"> to his doctor</span></p>
-                                            <p class="noti-time"><span class="notification-time">12 mins ago</span></p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
+
                         </ul>
                     </div>
                     <div class="topnav-dropdown-footer">
