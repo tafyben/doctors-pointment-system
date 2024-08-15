@@ -57,6 +57,7 @@ class DoctorController extends Controller
      */
     public function edit(string $id)
     {
+
         $user = User::find($id);
         return view('admin.doctor.edit', compact('user'));
     }
@@ -77,6 +78,7 @@ class DoctorController extends Controller
         //
     }
 
+    // method that validated all the details required to be stored in database
     public function validateStore($request){
         return $this->validate($request, [
             'name'=>'required',
