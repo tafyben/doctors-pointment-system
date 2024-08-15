@@ -44,10 +44,10 @@
 
                                     <td>
                                         <h2 class="table-avatar">
-                                            <a href="profile.html" class="avatar avatar-sm mr-2">
+                                            <a href="#" class="avatar avatar-sm mr-2">
                                                 <img class="avatar-img" src="{{asset('images')}}/{{$user->image}}" alt="{{$user->gender}}">
                                             </a>
-                                            <a href="profile.html">{{$user->gender}}</a>
+                                            <a href="#">{{$user->gender}}</a>
                                         </h2>
                                     </td>
 
