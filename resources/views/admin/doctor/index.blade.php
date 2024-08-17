@@ -23,7 +23,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="table-responsive">
-                        <!-- some changed can noted down below, not everything will ne to be included -->
+                        <!-- some changed can noted down below, not everything will need to be included meet-->
                         <table class="datatable table table-hover table-center mb-0">
                             <thead>
                             <tr>
