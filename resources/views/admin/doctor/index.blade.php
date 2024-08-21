@@ -8,6 +8,7 @@
             <div class="col-sm-7 col-auto">
                 <h3 class="page-title">Doctors</h3>
                 <ul class="breadcrumb">
+                    {{-- main routes to be checked here --}}
                     <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
                     <li class="breadcrumb-item active">Doctors</li>
                 </ul>
