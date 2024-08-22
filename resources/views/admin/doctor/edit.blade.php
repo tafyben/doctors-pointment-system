@@ -103,9 +103,11 @@
                                         <div class="form-group">
                                             <label>Role:</label>
                                             <select class="select form-control @error('role_id') is-invalid @enderror" name="role_id">
-                                                <option value="">Select Role</option>
-                                                @foreach(App\Models\Role::where('name','!=','patient')->get() as $role)
-                                                    <option value="{{$role->id}}">{{$role->name}}</option>
+                                                <option value="" disabled {{ old('role_id', $user->role_id) ? '' : 'selected' }}>Select Role</option>
+                                                @foreach(App\Models\Role::where('name', '!=', 'patient')->get() as $role)
+                                                    <option value="{{ $role->id }}" {{ $user->role_id == $role->id ? 'selected' : '' }}>
+                                                        {{ $role->name }}
+                                                    </option>
                                                 @endforeach
                                             </select>
                                             @error('role_id')
