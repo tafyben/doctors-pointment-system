@@ -65,6 +65,9 @@
                                             <a class="btn btn-sm bg-primary-light" data-toggle="modal" href="#view_details{{$user->id}}">
                                                 <i class="fe fe-eye"></i> View
                                             </a>
+                                            <a class="btn btn-sm bg-purple-light" data-toggle="modal" href="#view_details{{$user->id}}">
+                                                <i class="fe fe-pencil"></i> Edit
+                                            </a>
                                             <a  data-toggle="modal" href="#delete_modal" class="btn btn-sm bg-danger-light">
                                                 <i class="fe fe-trash"></i> Delete
                                             </a>
