@@ -151,7 +151,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Education:</label>
-                                            <input type="text" class="form-control @error('education') is-invalid @enderror" name="education" value="{{old('education')}}">
+                                            <input type="text" class="form-control @error('education') is-invalid @enderror" name="education" value="{{$user->education}}">
                                             @error('education')
                                             <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -163,7 +163,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Image:</label>
-                                            <input type="file" class="form-control @error('image') is-invalid @enderror" name="image" value="{{old('image')}}">
+                                            <input type="file" class="form-control @error('image') is-invalid @enderror" name="image" value="{{$user->image}}">
                                             @error('image')
                                             <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -176,7 +176,7 @@
                                     <div class="form-group">
                                         <label>Description:</label>
                                         <textarea rows="5" cols="5" class="form-control @error('description') is-invalid @enderror"
-                                                  placeholder="Enter message" name="description" value="{{old('description')}}"
+                                                  placeholder="Enter message" name="description" value="{{$user->description}}"
                                         >
 
                                         </textarea>
