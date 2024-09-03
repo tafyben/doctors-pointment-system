@@ -13,7 +13,7 @@ class DoctorController extends Controller
     public function index()
     {
         // this is to see only the doctor and admin on the doctor dashboard and not the patient.
-        dd(\Auth::user()->role->name);
+//        dd(\Auth::user()->role->name);
         $doctors = User::where('role_id', '!=', 3)->get();
         return view('admin.doctor.index', compact('doctors'));
     }
