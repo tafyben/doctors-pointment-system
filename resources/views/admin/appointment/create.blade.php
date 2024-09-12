@@ -173,16 +173,17 @@
 
     </div>
 
-    <style type="text/css">
-        input[type="checkbox"]{
-            zoom:1.5;
 
-        }
-        body{
-            font-size: 20px;
-        }
-    </style>
     @push('scripts')
+        <style type="text/css">
+            input[type="checkbox"]{
+                zoom:1.5;
+
+            }
+            body{
+                font-size: 20px;
+            }
+        </style>
         <script type="text/javascript">
             $(function () {
                 $('#main-datetime').datetimepicker({
