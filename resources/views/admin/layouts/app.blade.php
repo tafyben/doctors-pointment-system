@@ -24,6 +24,9 @@
     <link rel="stylesheet" href="{{asset('admin/assets/plugins/morris/morris.css')}}">
     <!-- Datatables CSS -->
     <link rel="stylesheet" href="{{asset('admin/assets/plugins/datatables/datatables.min.css')}}">
+    <link rel="stylesheet" href="{{asset('admin/assets/plugins/tempusdominus-bootstrap-4/build/css/tempusdominus-bootstrap-4.min.css')}}">
+
+{{--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.38.0/css/tempusdominus-bootstrap-4.min.css" crossorigin="anonymous" />--}}
     <!-- Main CSS -->
     <link rel="stylesheet" href="{{asset('admin/assets/css/style.css')}}">
 
@@ -182,6 +185,7 @@
 
 <!-- Bootstrap Core JS -->
 <script src="{{asset('admin/assets/js/popper.min.js')}}"></script>
+<script src="{{asset('admin/assets/js/moment/moment.js')}}"></script>
 <script src="{{asset('admin/assets/js/bootstrap.min.js')}}"></script>
 
 <!-- Slimscroll JS -->
@@ -196,10 +200,18 @@
 <!-- Datatables JS -->
 <script src="{{asset('admin/assets/plugins/datatables/jquery.dataTables.min.js')}}"></script>
 <script src="{{asset('admin/assets/plugins/datatables/datatables.min.js')}}"></script>
+<script src="{{asset('admin/assets/plugins/tempusdominus-bootstrap-4/build/js/tempusdominus-bootstrap-4.min.js')}}"></script>
+
+{{--new scripts --}}
+{{--<script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.38.0/js/tempusdominus-bootstrap-4.min.js" crossorigin="anonymous"></script>--}}
+
+{{--<script src="{{asset('admin/assets/plugins/datedropper/datedropper.min.js')}}"></script>--}}
 <!-- Custom JS -->
 <script  src="{{asset('admin/assets/js/script.js')}}"></script>
 
 
+
+@stack('scripts')
 </body>
 
 </html>

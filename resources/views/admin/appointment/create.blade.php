@@ -15,6 +15,7 @@
     </div>
 
 
+
     <div class="container">
 
         <div class="card">
@@ -23,7 +24,7 @@
 
             </div>
             <div class="card-body">
-                <input type="text" class="form-control datetimepicker-input" id="datepicker" data-toggle="datetimepicker" data-target="#datepicker" name="date">
+                <input type="text" class="form-control datetimepicker-input" id="main-datetime" data-toggle="datetimepicker" data-target="#main-datetime" name="date">
             </div>
         </div>
 
@@ -181,5 +182,13 @@
             font-size: 20px;
         }
     </style>
-
+    @push('scripts')
+        <script type="text/javascript">
+            $(function () {
+                $('#main-datetime').datetimepicker({
+                    format: 'LT'
+                });
+            });
+        </script>
+    @endpush
 @endsection
