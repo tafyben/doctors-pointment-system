@@ -17,7 +17,13 @@
 
 
     <div class="container">
-
+        @if(Session::has('message'))
+            <div class="alert bg-success alert-success text-white" role="alert">
+                {{Session::get('message')}}
+            </div>
+        @endif
+        <form action="{{route('appointment.store')}}" method="post">
+            @csrf
         <div class="card">
             <div class="card-header">
                 Choose date
@@ -170,7 +176,7 @@
             </div>
         </div>
 
-
+        </form>
     </div>
 
 
