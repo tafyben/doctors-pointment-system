@@ -23,7 +23,7 @@
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-body">
-                    <div class="table-responsive">
+                    <div class="table-striped-columns">
                         <!-- some changed can noted down below, not everything will need to be included meet-->
                         <table class="datatable table table-hover table-center mb-0">
                             <thead>
@@ -63,13 +63,13 @@
                                     <td class="text-right">
                                         <div class="actions">
                                             <a class="btn btn-sm bg-primary-light" data-toggle="modal" href="#view_details{{$user->id}}">
-                                                <i class="fe fe-eye"></i> View
+                                                <i class="fe fe-eye"></i>
                                             </a>
                                             <a class="btn btn-sm bg-purple-light" href="{{route('doctor.edit', $user->id)}}">
-                                                <i class="fe fe-pencil"></i> Edit
+                                                <i class="fe fe-pencil"></i>
                                             </a>
                                             <a  data-toggle="modal" href="#delete_modal" class="btn btn-sm bg-danger-light">
-                                                <i class="fe fe-trash"></i> Delete
+                                                <i class="fe fe-trash"></i>
                                             </a>
                                         </div>
                                     </td>
