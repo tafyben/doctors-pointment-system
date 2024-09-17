@@ -9,9 +9,9 @@
                     <a href="#"><i class="fe fe-home"></i> <span>Dashboard</span></a>
                 </li>
                 <li class="submenu">
-                    <a href="#"><i class="fe fe-layout"></i> <span> Appointments</span> <span class="menu-arrow"></span></a>
+                    <a href="#"><i class="fe fe-layout"></i> <span> Doctors</span> <span class="menu-arrow"></span></a>
                     <ul style="display: none;">
-                        <li><a href="#">Appointments</a></li>
+                        <li><a href="{{route('doctor.index')}}">All Doctors</a></li>
                         <li><a href="#">Create Appointment</a></li>
                     </ul>
                 </li>
