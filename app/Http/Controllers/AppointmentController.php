@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Appointment;
 use App\Models\Time;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AppointmentController extends Controller
 {
@@ -30,7 +31,7 @@ class AppointmentController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'date'=>'required|unique:appointments,date,NULL,id,user_id,'.\Auth::id(),
+            'date'=>'required|unique:appointments,date,NULL,id,user_id,'. Auth::id(),
             'time'=>'required'
         ]);
         $appointment = Appointment::create([
