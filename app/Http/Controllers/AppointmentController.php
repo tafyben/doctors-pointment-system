@@ -77,29 +77,5 @@ class AppointmentController extends Controller
     {
         //
     }
-    public function check(Request $request){
 
-        $date = $request->date;
-        $appointment= Appointment::where('date',$date)->where('user_id',auth()->user()->id)->first();
-        if(!$appointment){
-            return redirect()->to('/appointment')->with('errormessage','Appointment time not available for this date');
-        }
-        $appointmentId = $appointment->id;
-        $times = Time::where('appointment_id',$appointmentId)->get();
-
-
-        return view('admin.appointment.index',compact('times','appointmentId','date'));
-    }
-    public function updateTime(Request $request){
-        $appointmentId = $request->appoinmentId;
-        $appointment = Time::where('appointment_id',$appointmentId)->delete();
-        foreach($request->time as $time){
-            Time::create([
-                'appointment_id'=>$appointmentId,
-                'time'=>$time,
-                'status'=>0
-            ]);
-        }
-        return redirect()->route('appointment.index')->with('message','Appointment time updated!!');
-    }
 }
