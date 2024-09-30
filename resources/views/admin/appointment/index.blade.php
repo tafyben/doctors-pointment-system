@@ -8,7 +8,7 @@
                 <h3 class="page-title">Doctors</h3>
                 <ul class="breadcrumb">
                     <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                    <li class="breadcrumb-item active">Create</li>
+                    <li class="breadcrumb-item active">Check times</li>
                 </ul>
             </div>
         </div>
@@ -27,12 +27,22 @@
                 {{$error}}
             </div>
         @endforeach
-        <form action="{{route('appointment.store')}}" method="post">
+        @if(Session::has('errmessage'))
+            <div class="alert bg-danger alert-success text-white" role="alert">
+                {{Session::get('errmessage')}}
+            </div>
+        @endif
+        <form action="{{route('appointment.check')}}" method="post">
             @csrf
             <div class="card">
                 <div class="card-header">
                     Choose date
+                    <br>
 
+                    @if(isset($date))
+                        <strong>Your timetable for:</strong>
+                        {{$date}}
+                    @endif
                 </div>
                 <div class="card-body">
                     <input type="text" class="form-control datetimepicker-input" id="main-datetime" data-toggle="datetimepicker" data-target="#main-datetime" name="date">

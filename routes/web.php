@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AppointmentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,5 +32,5 @@ Route::group(['middleware'=>['auth','admin']],function() {
 });
 
 
-Route::resource('appointment',\App\Http\Controllers\AppointmentController::class);
-Route::post('/appointment/check','AppointmentController@check')->name('appointment.check');
+Route::resource('appointment',AppointmentController::class);
+Route::post('/appointment/check',[AppointmentController::class, 'check'])->name('appointment.check');
