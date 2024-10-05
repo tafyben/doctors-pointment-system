@@ -32,6 +32,8 @@ Route::group(['middleware'=>['auth','admin']],function() {
 });
 
 
-Route::resource('appointment',AppointmentController::class);
-Route::post('/appointment/check',[AppointmentController::class, 'check'])->name('appointment.check');
-Route::post('/appointment/update',[AppointmentController::class ,'updateTime'])->name('update');
+Route::group(['middleware'=>['auth','doctor']],function(){
+    Route::resource('appointment',AppointmentController::class);
+    Route::post('/appointment/check',[AppointmentController::class, 'check'])->name('appointment.check');
+    Route::post('/appointment/update',[AppointmentController::class ,'updateTime'])->name('update');
+});
