@@ -8,7 +8,7 @@
     <title>UclanDoc</title>
 
     <!-- Favicons -->
-    <link type="image/x-icon" href="{{asset('assets/img/favicon.png')}}" rel="icon">
+
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
@@ -16,6 +16,7 @@
     <!-- Fontawesome CSS -->
     <link rel="stylesheet" href="{{asset('assets/plugins/fontawesome/css/fontawesome.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/plugins/fontawesome/css/all.min.css')}}">
+    <link rel="stylesheet" href="{{asset('admin/assets/plugins/tempusdominus-bootstrap-4/build/css/tempusdominus-bootstrap-4.min.css')}}">
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
@@ -122,15 +123,79 @@
                 <div class="search-box">
                     <form action="#">
                         <div class="form-group search-location">
-                            <input type="text" class="form-control" placeholder="Search Location">
-                            <span class="form-text">Based on your Location</span>
+                            <input type="text" class="form-control" placeholder="Search Location (N/A)" disabled>
+                            <span class="form-text">(Not available yet)</span>
                         </div>
+
+
                         <div class="form-group search-info">
-                            <input type="text" class="form-control" placeholder="Search Doctors, Clinics, Hospitals, Diseases Etc">
-                            <span class="form-text">Ex : Dental or Sugar Check up etc</span>
+
+                            <input type="text" class="form-control datetimepicker-input" id="main-datetime" data-toggle="datetimepicker" data-target="#main-datetime" name="date" placeholder="Search Doctors.">
+                            <span class="form-text">Ex : Check available doctors</span>
                         </div>
                         <button type="submit" class="btn btn-primary search-btn"><i class="fas fa-search"></i> <span>Search</span></button>
                     </form>
+
+                </div>
+                <!-- Search -->
+
+            </div>
+        </div>
+    </section>
+    <section class="section mt-5">
+        <div class="container-fluid">
+            <div class="banner-wrapper">
+                <div class="banner-header text-center">
+                    <h1>Doctors available today</h1>
+
+                </div>
+
+                <!-- Search -->
+                <div class="card mt-1">
+                    <div class="card-header"> Doctors available today</div>
+                    <div class="card-body">
+
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Photo</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Category</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            <tr>
+                                <th scope="row">1</th>
+                                <td><img src="/doctor/doctor.png" width="80" style="border-radius: 50%;">
+                                </td>
+                                <td>the Bird</td>
+                                <td>@twitter</td>
+                                <td>
+                                    <button class="btn btn-success">Book Appointment</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">1</th>
+                                <td><img src="/doctor/doctor.png" width="80" style="border-radius: 50%;">
+                                </td>
+                                <td>the Bird</td>
+                                <td>@twitter</td>
+                                <td>
+                                    <button class="btn btn-success">Book Appointment</button>
+                                </td>
+                            </tr>
+
+
+                            </tbody>
+                        </table>
+
+
+                    </div>
+
                 </div>
                 <!-- Search -->
 
@@ -424,6 +489,7 @@
 
 <!-- Bootstrap Core JS -->
 <script src="{{asset('assets/js/popper.min.js')}}"></script>
+<script src="{{asset('admin/assets/js/moment/moment.js')}}"></script>
 <script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
 
 <!-- Slick JS -->
@@ -431,7 +497,14 @@
 
 <!-- Custom JS -->
 <script src="{{asset('assets/js/script.js')}}"></script>
-
+<script src="{{asset('admin/assets/plugins/tempusdominus-bootstrap-4/build/js/tempusdominus-bootstrap-4.min.js')}}"></script>
+<script type="text/javascript">
+    $(function () {
+        $('#main-datetime').datetimepicker({
+            format: 'L'
+        });
+    });
+</script>
 </body>
 
 </html>
