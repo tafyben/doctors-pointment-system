@@ -166,28 +166,21 @@
                             </tr>
                             </thead>
                             <tbody>
+                            @forelse($doctors as $doctor)
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td><img src="/doctor/doctor.png" width="80" style="border-radius: 50%;">
+                                    </td>
+                                    <td>the Bird</td>
+                                    <td>@twitter</td>
+                                    <td>
+                                        <button class="btn btn-success">Book Appointment</button>
+                                    </td>
+                                </tr>
+                            @empty
+                                <p>No doctors today</p>
+                            @endforelse
 
-                            <tr>
-                                <th scope="row">1</th>
-                                <td><img src="/doctor/doctor.png" width="80" style="border-radius: 50%;">
-                                </td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                                <td>
-                                    <button class="btn btn-success">Book Appointment</button>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <th scope="row">1</th>
-                                <td><img src="/doctor/doctor.png" width="80" style="border-radius: 50%;">
-                                </td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                                <td>
-                                    <button class="btn btn-success">Book Appointment</button>
-                                </td>
-                            </tr>
 
 
                             </tbody>
@@ -501,7 +494,7 @@
 <script type="text/javascript">
     $(function () {
         $('#main-datetime').datetimepicker({
-            format: 'L'
+            format: 'YYYY-MM-DD'
         });
     });
 </script>

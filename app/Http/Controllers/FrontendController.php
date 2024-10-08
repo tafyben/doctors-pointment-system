@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Appointment;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -11,7 +12,11 @@ class FrontendController extends Controller
      */
     public function index()
     {
-        return view('index');
+        date_default_timezone_set('Africa/Harare');
+        $doctors = Appointment::where('date', date('Y-m-d'))->get();
+
+
+        return view('index', compact('doctors'));
     }
 
     /**
