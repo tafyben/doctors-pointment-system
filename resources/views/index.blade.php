@@ -36,19 +36,19 @@
     <!-- Header -->
     <header class="header">
         <nav class="navbar navbar-expand-lg header-nav">
-
             <div class="navbar-header">
                 <a id="mobile_btn" href="javascript:void(0);">
-							<span class="bar-icon">
-								<span></span>
-								<span></span>
-								<span></span>
-							</span>
+            <span class="bar-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
                 </a>
                 <a href="#" class="navbar-brand logo">
                     <img src="#" class="img-fluid" alt="Logo">
                 </a>
             </div>
+
             <div class="main-menu-wrapper">
                 <div class="menu-header">
                     <a href="#" class="menu-logo">
@@ -59,10 +59,7 @@
                     </a>
                 </div>
                 <ul class="main-nav">
-                    <li class="active">
-                        <a href="#">Home</a>
-                    </li>
-
+                    <li class="active"><a href="#">Home</a></li>
                     <li class="has-submenu">
                         <a href="#">Pages <i class="fas fa-chevron-down"></i></a>
                         <ul class="submenu">
@@ -84,29 +81,20 @@
                             <li><a href="#">Forgot Password</a></li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="#" target="_blank">About</a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">Services</a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">Blog</a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">Contact Us</a>
-                    </li>
-
-
-
+                    <li><a href="#" target="_blank">About</a></li>
+                    <li><a href="#" target="_blank">Services</a></li>
+                    <li><a href="#" target="_blank">Blog</a></li>
+                    <li><a href="#" target="_blank">Contact Us</a></li>
                 </ul>
-
-            </div>
-            <div>
-
             </div>
 
+            <!-- Right-aligned login and registration buttons -->
+            <div class="navbar-nav ml-auto">
+                <a href="#" class="btn btn-primary mx-2">Login</a>
+                <a href="#" class="btn btn-secondary mx-2">Register</a>
+            </div>
         </nav>
+
     </header>
     <!-- Header -->
 
