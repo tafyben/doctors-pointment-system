@@ -159,20 +159,19 @@
                             <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Photo</th>
                                 <th scope="col">Name</th>
-                                <th scope="col">Category</th>
+                                <th scope="col">Department</th>
                                 <th></th>
                             </tr>
                             </thead>
                             <tbody>
                             @forelse($doctors as $doctor)
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td><img src="/doctor/doctor.png" width="80" style="border-radius: 50%;">
-                                    </td>
-                                    <td>the Bird</td>
-                                    <td>@twitter</td>
+                                    <th scope="row">{{$doctor->doctor->id}}</th>
+                                    {{--<td><img src="#" width="80" style="border-radius: 50%;">
+                                    </td>--}}
+                                    <td>{{$doctor->doctor->name}}</td>
+                                    <td>{{$doctor->doctor->department}}</td>
                                     <td>
                                         <button class="btn btn-success">Book Appointment</button>
                                     </td>
