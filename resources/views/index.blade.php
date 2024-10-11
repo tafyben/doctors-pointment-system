@@ -100,8 +100,8 @@
 
             <!-- Right-aligned login and registration buttons -->
             <div class="navbar-nav">
-                <a href="#" class="btn btn-primary mx-2">Login</a>
-                <a href="#" class="btn btn-secondary mx-2">Register</a>
+                <a href="{{url('/login')}}" class="btn btn-primary mx-2">Login</a>
+                <a href="{{url('/register')}}" class="btn btn-secondary mx-2">Register</a>
             </div>
         </nav>
     </header>
