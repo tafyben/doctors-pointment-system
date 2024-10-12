@@ -38,9 +38,9 @@ class FrontendController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($doctorId, $date)
     {
-        //
+        return view('appointment');
     }
 
     /**
