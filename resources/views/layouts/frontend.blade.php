@@ -279,6 +279,25 @@
         });
     });
 </script>
+<style>
+    label.btn input{
+        opacity: 0;
+    }
+    label.btn input{
+        opacity: 0;
+        position: absolute;
+    }
+    label.btn span{
+        text-align: center;
+        padding: 2px 8px;
+        display: block;
+        min-width: 60px;
+    }
+    label.btn input:checked+span{
+        background-color:#09e5ab;
+        color:#fff;
+    }
+</style>
 </body>
 
 </html>
