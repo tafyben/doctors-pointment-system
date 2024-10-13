@@ -122,6 +122,8 @@
 
                 <div class="col-md-7 col-lg-8 col-xl-9">
                     <div class="appointments">
+                        <form action="" method="post">
+                            @csrf
 
                         <!-- Appointment List -->
                             <div class="card">
@@ -140,8 +142,12 @@
 
                                     </div>
                                 </div>
+                                <div class="card-footer">
+                                    <button type="submit" class="btn btn-success" style="width: 100%;">Book Appointment</button>
+                                </div>
                             </div>
                         <!-- /Appointment List -->
+                        </form>
 
 
 
