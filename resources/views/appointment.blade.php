@@ -34,10 +34,13 @@
                                     <img src="#" alt="User Image">
                                 </a>
                                 <div class="profile-det-info">
-                                    <h3>Dr. Darren Elder</h3>
+                                    <h3>{{$user->name}}</h3>
 
                                     <div class="patient-details">
-                                        <h5 class="mb-0">BDS, MDS - Oral & Maxillofacial Surgery</h5>
+                                        <h5 class="mb-0">{{$user->education}}</h5>
+                                    </div>
+                                    <div class="patient-details">
+                                        <h5 class="mb-0">{{$user->department}}</h5>
                                     </div>
                                 </div>
                             </div>
