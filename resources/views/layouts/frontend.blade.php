@@ -275,7 +275,9 @@
 <script type="text/javascript">
     $(function () {
         $('#main-datetime').datetimepicker({
-            format: 'YYYY-MM-DD'
+            format: 'YYYY-MM-DD',
+            minDate: moment()
+
         });
     });
 </script>
