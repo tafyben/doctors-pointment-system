@@ -67,6 +67,7 @@ class RegisterController extends Controller
     {
         // state the role
         $role = Role::where('name', 'patient')->first();
+        // the default role when registering
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
