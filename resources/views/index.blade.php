@@ -14,7 +14,7 @@
 
                 <!-- Search -->
                 <div class="search-box">
-                    <form action="#">
+                    <form action="{{url('/')}}" method="GET">
                         <div class="form-group search-location">
                             <input type="text" class="form-control" placeholder="Search Location (N/A)" disabled>
                             <span class="form-text">(Not available yet)</span>

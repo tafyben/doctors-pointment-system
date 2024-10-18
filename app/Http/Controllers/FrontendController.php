@@ -15,6 +15,11 @@ class FrontendController extends Controller
     public function index()
     {
         date_default_timezone_set('Africa/Harare');
+        if (request('date')){
+            $doctors = $this->findDoctorsBasedOnDate(request('date'));
+            return view('index', compact('doctors'));
+        }
+
         $doctors = Appointment::where('date', date('Y-m-d'))->get();
 
 
@@ -70,5 +75,11 @@ class FrontendController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function findDoctorsBasedOnDate($date)
+    {
+        $doctors = Appointment::where('date', $date)->get();
+        return $doctors;
     }
 }
