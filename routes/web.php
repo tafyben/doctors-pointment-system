@@ -16,13 +16,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+
 Route::get('/', [FrontendController::class, 'index']);
 
-Route::get('/new-appointment/{doctorId}/{date}', [FrontendController::class, 'show'])->name('create-appointment');
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
+Route::get('/dashboard', [\App\Http\Controllers\DashboardController::class, 'index']);
 
 Auth::routes();
 
@@ -34,8 +31,11 @@ Route::group(['middleware'=>['auth','admin']],function() {
 });
 
 
+
 Route::group(['middleware'=>['auth','doctor']],function(){
     Route::resource('appointment',AppointmentController::class);
     Route::post('/appointment/check',[AppointmentController::class, 'check'])->name('appointment.check');
     Route::post('/appointment/update',[AppointmentController::class ,'updateTime'])->name('update');
 });
+
+Route::get('/new-appointment/{doctorId}/{date}', [FrontendController::class, 'show'])->name('create-appointment');
