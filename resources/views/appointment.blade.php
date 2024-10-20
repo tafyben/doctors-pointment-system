@@ -146,7 +146,13 @@
                                     </div>
                                 </div>
                                 <div class="card-footer">
-                                    <button type="submit" class="btn btn-success" style="width: 100%;">Book Appointment</button>
+                                    @if(Auth::check())
+                                        <button type="submit" class="btn btn-success" style="width: 100%;">Book Appointment</button>
+                                    @else
+                                        <p class="lead font-weight-light">Please login to your account to make an appointment.</p>
+                                        <a href="/register" class="btn btn-outline-primary">Register</a>
+                                        <a href="/login" class="btn btn-outline-info">Login</a>
+                                    @endif
                                 </div>
                             </div>
                         <!-- /Appointment List -->
