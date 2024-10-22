@@ -142,6 +142,8 @@
                                                 </label>
                                             </div>
                                             <input type="hidden" name="doctorId" value="{{$doctor_id}}">
+                                            <input type="hidden" name="appointmentId" value="{{$time->appointment_id}}">
+
                                         @endforeach
 
                                     </div>

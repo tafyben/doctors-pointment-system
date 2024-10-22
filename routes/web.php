@@ -39,3 +39,6 @@ Route::group(['middleware'=>['auth','doctor']],function(){
 });
 
 Route::get('/new-appointment/{doctorId}/{date}', [FrontendController::class, 'show'])->name('create-appointment');
+
+// make user booking
+Route::post('/book/appointment', [FrontendController::class, 'store'])->name('booking.appointment')->middleware('auth');
