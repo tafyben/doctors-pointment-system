@@ -137,10 +137,11 @@
                                         @foreach($times as $time)
                                             <div class="col-md-3">
                                                 <label class="btn btn-outline-primary">
-                                                    <input type="radio" name="status" value="1">
+                                                    <input type="radio" name="time" value="{{$time->time}}">
                                                     <span>{{$time->time}}</span>
                                                 </label>
                                             </div>
+                                            <input type="hidden" name="doctorId" value="{{$doctor_id}}">
                                         @endforeach
 
                                     </div>
