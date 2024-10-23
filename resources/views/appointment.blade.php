@@ -125,7 +125,18 @@
 
                 <div class="col-md-7 col-lg-8 col-xl-9">
                     <div class="appointments">
-                        <form action="" method="post">
+                        @foreach($errors->all() as $error)
+                            <div class="alert alert-danger">
+                                {{$error}}
+                            </div>
+                        @endforeach
+
+                        @if(Session::has('message'))
+                            <div class="alert alert-success">
+                                {{Session::get('message')}}
+                            </div>
+                        @endif
+                        <form action="{{route('booking.appointment')}}" method="post">
                             @csrf
 
                         <!-- Appointment List -->
@@ -143,7 +154,8 @@
                                             </div>
                                             <input type="hidden" name="doctorId" value="{{$doctor_id}}">
                                             <input type="hidden" name="appointmentId" value="{{$time->appointment_id}}">
-
+                                            <input type="hidden" name="date" value="{{$date}}">
+                                            {{$time->appointment_id}}
                                         @endforeach
 
                                     </div>
