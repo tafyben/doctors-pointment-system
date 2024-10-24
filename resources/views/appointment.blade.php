@@ -136,6 +136,11 @@
                                 {{Session::get('message')}}
                             </div>
                         @endif
+                        @if(Session::has('error-message'))
+                            <div class="alert alert-danger">
+                                {{Session::get('error-message')}}
+                            </div>
+                        @endif
                         <form action="{{route('booking.appointment')}}" method="post">
                             @csrf
 
@@ -155,7 +160,6 @@
                                             <input type="hidden" name="doctorId" value="{{$doctor_id}}">
                                             <input type="hidden" name="appointmentId" value="{{$time->appointment_id}}">
                                             <input type="hidden" name="date" value="{{$date}}">
-                                            {{$time->appointment_id}}
                                         @endforeach
 
                                     </div>
