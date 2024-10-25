@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\AppointmentMail;
 use App\Models\Appointment;
 use App\Models\Booking;
 use App\Models\Time;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class FrontendController extends Controller
 {
@@ -60,7 +62,28 @@ class FrontendController extends Controller
             ->where('time',$request->time)
             ->update(['status'=>1]);
 
+        $doctorName = User::where('id',$request->doctorId)->first();
+        $mailData = [
+            'name'=>auth()->user()->name,
+            'time'=>$request->time,
+            'date'=>$request->date,
+            'doctorName' => $doctorName->name
+
+        ];
+        try{
+             Mail::to(auth()->user()->email)->send(new AppointmentMail($mailData));
+
+        }catch(\Exception $e){
+
+        }
+
         return redirect()->back()->with('message','Your appointment was booked.');
+    }
+
+    public function myBookings()
+    {
+        $appointments = Booking::latest()->where('user_id',auth()->user()->id)->get();
+        return view('booking.index',compact('appointments'));
     }
 
     public function checkBookingTimeInterval()

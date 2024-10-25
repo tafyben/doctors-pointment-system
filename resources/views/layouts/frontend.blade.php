@@ -98,11 +98,18 @@
                 </ul>
             </div>
 
-            <!-- Right-aligned login and registration buttons -->
-            <div class="navbar-nav">
-                <a href="{{url('/login')}}" class="btn btn-primary mx-2">Login</a>
-                <a href="{{url('/register')}}" class="btn btn-secondary mx-2">Register</a>
-            </div>
+                <!-- Right-aligned login and registration buttons -->
+                <div class="navbar-nav">
+                    @if(auth()->user()->role->name === 'patient')
+                        <a href="{{route('my.booking')}}" class="btn btn-primary mx-2">My Booking</a>
+                    @endif
+
+                    @guest
+                    <a href="{{url('/login')}}" class="btn btn-primary mx-2">Login</a>
+                    <a href="{{url('/register')}}" class="btn btn-secondary mx-2">Register</a>
+                    @endguest
+
+                </div>
         </nav>
     </header>
 
