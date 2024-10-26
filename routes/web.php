@@ -21,8 +21,7 @@ Route::get('/', [FrontendController::class, 'index']);
 
 Route::get('/dashboard', [\App\Http\Controllers\DashboardController::class, 'index']);
 
-Route::get('/profile', [\App\Http\Controllers\ProfileController::class, 'index']);
-Route::post('/profile', [\App\Http\Controllers\ProfileController::class, 'store'])->name('profile.store');
+
 
 
 Auth::routes();
@@ -44,6 +43,14 @@ Route::group(['middleware'=>['auth','doctor']],function(){
 
 Route::get('/new-appointment/{doctorId}/{date}', [FrontendController::class, 'show'])->name('create-appointment');
 
+
+Route::group(['middleware'=>['auth','patient']],function() {
 // make user booking
-Route::post('/book/appointment', [FrontendController::class, 'store'])->name('booking.appointment')->middleware('auth');
-Route::get('/my-booking',[FrontendController::class, 'myBookings'])->name('my.booking')->middleware('auth');
+    Route::post('/book/appointment', [FrontendController::class, 'store'])->name('booking.appointment')->middleware('auth');
+    Route::get('/my-booking', [FrontendController::class, 'myBookings'])->name('my.booking')->middleware('auth');
+
+    Route::get('/user-profile', [\App\Http\Controllers\ProfileController::class, 'index']);
+    Route::post('/profile', [\App\Http\Controllers\ProfileController::class, 'store'])->name('profile.store');
+
+    // profile picture method in controller is the only one not here
+});

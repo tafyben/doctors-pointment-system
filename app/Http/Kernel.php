@@ -68,6 +68,7 @@ class Kernel extends HttpKernel
         /* personal middlewares*/
         'admin' => \App\Http\Middleware\Admin::class,
         'doctor'=>\App\Http\Middleware\Doctor::class,
+        'patient'=>\App\Http\Middleware\PatientMiddleware::class,
 
     ];
 }

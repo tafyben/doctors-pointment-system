@@ -126,9 +126,19 @@
                                     <p class="text-muted mb-0">{{auth()->user()->gender}}</p>
                                 </div>
                             </div>
-                            <a class="dropdown-item" href="#">Dashboard</a>
-                            <a class="dropdown-item" href="#">Profile Settings</a>
-                            <a class="dropdown-item" href="login.html">Logout</a>
+                            <a class="dropdown-item" href="{{url('dashboard')}}">Dashboard</a>
+                            @if(auth()->check() && auth()->user()->role->name === 'patient')
+                                <a class="dropdown-item" href="{{url('user-profile')}}">Profile Settings</a>
+                            @endif
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
                         </div>
                     </li>
                 @endif
