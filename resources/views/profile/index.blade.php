@@ -47,7 +47,7 @@
                             </div>
                             <div class="patient-info">
                                 <ul>
-                                    <li>Phone <span>{{auth()->user()->phone}}</span></li>
+                                    <li>Phone <span>{{auth()->user()->phone_number}}</span></li>
                                     <li>Gender <span>{{auth()->user()->gender}}</span></li>
 {{--                                    <li>Blood Group <span>AB+</span></li>--}}
                                 </ul>
@@ -95,24 +95,14 @@
                 <div class="col-md-7 col-lg-8 col-xl-9 dct-appoinment">
                     <div class="card">
                         <div class="card-body pt-0">
-                            <div class="user-tabs">
-                                <ul class="nav nav-tabs nav-tabs-bottom nav-justified flex-wrap">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" href="#pat_appointments" data-toggle="tab">Appointments</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#pres" data-toggle="tab"><span>Prescription</span></a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#medical" data-toggle="tab"><span class="med-records">Medical Records</span></a>
-                                    </li>
-
-                                </ul>
-                            </div>
+                            @if(Session::has('message'))
+                                <div class="alert alert-success">
+                                    {{Session::get('message')}}
+                                </div>
+                            @endif
                             <div class="tab-content">
 
                                 <!-- Appointment Tab -->
-                                <div id="pat_appointments" class="tab-pane fade show active">
                                     <div class="card card-table mb-0">
                                         <div class="card-body">
                                             <div class="card-body">
@@ -169,34 +159,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
                                 <!-- /Appointment Tab -->
-
-                                <!-- Prescription Tab -->
-                                <div class="tab-pane fade" id="pres">
-                                    <div class="text-right">
-{{--                                        <a href="add-prescription.html" class="add-new-btn">Add Prescription</a>--}}
-                                    </div>
-                                    <div class="card card-table mb-0">
-                                        <div class="card-body">
-                                            <h1 class="text-center m-5">Coming Soon</h1>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- /Prescription Tab -->
-
-                                <!-- Medical Records Tab -->
-                                <div class="tab-pane fade" id="medical">
-                                    <div class="text-right">
-{{--                                        <a href="#" class="add-new-btn" data-toggle="modal" data-target="#add_medical_records">Add Medical Records</a>--}}
-                                    </div>
-                                    <div class="card card-table mb-0">
-                                        <div class="card-body">
-                                            <h1 class="text-center m-5">Coming Soon</h1>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- /Medical Records Tab -->
 
 
 

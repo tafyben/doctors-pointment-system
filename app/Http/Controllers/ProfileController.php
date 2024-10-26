@@ -28,7 +28,20 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'name'=>'required',
+            'gender'=>'required'
+        ]);
+        User::where('id',auth()->user()->id)
+            ->update([
+                'name'=>$request->name,
+                'gender'=>$request->gender,
+                'phone_number'=>$request->phone_number,
+                'address'=>$request->address,
+                'description'=>$request->description
+
+            ]);
+        return redirect()->back()->with('message','profile updated');
     }
 
     /**
@@ -36,13 +49,7 @@ class ProfileController extends Controller
      */
     public function show(Request $request)
     {
-        $this->validate($request,[
-            'name'=>'required',
-            'gender'=>'required'
-        ]);
-        User::where('id',auth()->user()->id)
-            ->update($request->except('_token'));
-        return redirect()->back()->with('message','profile updated');
+
     }
 
     public function profilePic(Request $request)
