@@ -22,15 +22,7 @@
     <!-- Main CSS -->
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="assets/js/html5shiv.min.js"></script>
-    <script src="assets/js/respond.min.js"></script>
- Scripts -->
-{{--    <script src="{{ asset('js/app.js') }}"defer></script>--}}
 
-
-    <![endif]-->
 
 </head>
 <body>
@@ -48,6 +40,7 @@
                     <span></span>
                     <span></span>
                 </span>
+                </a>
                 </a>
                 <a href="#" class="navbar-brand logo">
                     <img src="#" class="img-fluid" alt="Logo">
@@ -103,18 +96,43 @@
                 </ul>
             </div>
 
-                <!-- Right-aligned login and registration buttons -->
-                <div class="navbar-nav">
-                    @if(auth()->check()&& auth()->user()->role->name === 'patient')
-                        <a href="{{route('my.booking')}}" class="btn btn-primary mx-2">My Booking</a>
-                    @endif
+            <!-- Right-aligned section for My Booking, Login, and Dropdown -->
+            <div class="d-flex align-items-center navbar-right-section">
+                <!-- My Booking and Login Buttons -->
+                @if(auth()->check() && auth()->user()->role->name === 'patient')
+                    <a href="{{ route('my.booking') }}" class="btn btn-primary mx-2">My Booking</a>
+                @endif
 
-                    @guest
-                    <a href="{{url('/login')}}" class="btn btn-primary mx-2">Login</a>
-                    <a href="{{url('/register')}}" class="btn btn-secondary mx-2">Register</a>
-                    @endguest
+                @guest
+                    <a href="{{ url('/login') }}" class="btn btn-primary mx-2">Login</a>
+                    <a href="{{ url('/register') }}" class="btn btn-secondary mx-2">Register</a>
+                @endguest
 
-                </div>
+                <!-- Dropdown Menu (only visible for logged-in users) -->
+                @if(auth()->check())
+                    <li class="nav-item dropdown has-arrow logged-item ml-3">
+                        <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                    <span class="user-img">
+                        <img class="rounded-circle" src="https://picsum.photos/id/30/200/300" width="31" alt="Darren Elder">
+                    </span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <div class="user-header">
+                                <div class="avatar avatar-sm">
+                                    <img src="https://picsum.photos/id/30/200/300" alt="User Image" class="avatar-img rounded-circle">
+                                </div>
+                                <div class="user-text">
+                                    <h6>{{auth()->user()->name}}</h6>
+                                    <p class="text-muted mb-0">{{auth()->user()->gender}}</p>
+                                </div>
+                            </div>
+                            <a class="dropdown-item" href="#">Dashboard</a>
+                            <a class="dropdown-item" href="#">Profile Settings</a>
+                            <a class="dropdown-item" href="login.html">Logout</a>
+                        </div>
+                    </li>
+                @endif
+            </div>
         </nav>
     </header>
 

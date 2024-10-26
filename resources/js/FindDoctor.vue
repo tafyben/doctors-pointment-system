@@ -4,7 +4,7 @@
             <div class="banner-wrapper">
                 <div class="search-box">
                     <div class="form-group search-location">
-                            <datepicker :format="customDate" v-model="time" :inline=true></datepicker>
+                            <datepicker :format="customDate" v-model="time" :disabledDates="disabledDates" :inline=true></datepicker>
                         </div>
                 </div>
 
@@ -69,7 +69,10 @@ import BeatLoader from 'vue-spinner/src/BeatLoader.vue';
             return{
                 time:'',
                 doctors:[],
-                loading:false
+                loading:false,
+                disabledDates:{
+                    to:new Date(Date.now() - 86400000)
+                }
             }
         },
         components:{

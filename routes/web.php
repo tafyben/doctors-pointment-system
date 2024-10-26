@@ -21,6 +21,10 @@ Route::get('/', [FrontendController::class, 'index']);
 
 Route::get('/dashboard', [\App\Http\Controllers\DashboardController::class, 'index']);
 
+Route::get('/profile', [\App\Http\Controllers\ProfileController::class, 'index']);
+Route::post('/profile', [\App\Http\Controllers\ProfileController::class, 'store']);
+
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
