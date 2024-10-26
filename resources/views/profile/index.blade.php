@@ -116,7 +116,7 @@
                                     <div class="card card-table mb-0">
                                         <div class="card-body">
                                             <div class="card-body">
-                                                <form action="#" method="post">
+                                                <form action="{{route('profile.store')}}" method="post">
                                                     @csrf
                                                     <div class="form-group">
                                                         <label>Name</label>
