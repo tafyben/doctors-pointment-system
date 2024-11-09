@@ -8,7 +8,7 @@
                         </div>
                 </div>
 
-                {{time}}
+
 
         <div class="card mt-1">
             <div class="card-header"> Doctors available today</div>
@@ -24,11 +24,11 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <th scope="row">1</th>
+                    <tr v-for="(d, index) in doctors">
+                        <th scope="row">{{ index+1 }}</th>
 
-                        <td>Ben</td>
-                        <td>Heart</td>
+                        <td>{{ d.doctor.name }}</td>
+                        <td>{{ d.doctor.department }}</td>
                         <td>
                             <a href="#">
                                 <button class="btn btn-success">
@@ -56,11 +56,13 @@
 
 <script type="text/javascript">
 import datepicker from 'vuejs-datepicker'
+import axios from 'axios';
 import moment from 'moment'
     export default {
         data(){
             return{
-                time:''
+                time:'',
+                doctors:[]
             }
         },
         components:{
@@ -70,6 +72,11 @@ import moment from 'moment'
             customDate(date){
                 this.time = moment(date).format('YYYY-MM-DD')
             }
+        },
+        mounted(){
+            axios.get('/api/doctors/today').then((response)=>{
+                this.doctors = response.data
+            })
         }
     }
 </script>
