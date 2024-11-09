@@ -1877,13 +1877,21 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     customDate: function customDate(date) {
+      var _this = this;
       this.time = moment__WEBPACK_IMPORTED_MODULE_2___default()(date).format('YYYY-MM-DD');
+      axios__WEBPACK_IMPORTED_MODULE_1___default().post('/api/finddoctors', {
+        date: this.time
+      }).then(function (response) {
+        _this.doctors = response.data;
+      })["catch"](function (error) {
+        alert('error');
+      });
     }
   },
   mounted: function mounted() {
-    var _this = this;
+    var _this2 = this;
     axios__WEBPACK_IMPORTED_MODULE_1___default().get('/api/doctors/today').then(function (response) {
-      _this.doctors = response.data;
+      _this2.doctors = response.data;
     });
   }
 });

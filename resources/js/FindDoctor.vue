@@ -71,7 +71,10 @@ import moment from 'moment'
         },
         methods:{
             customDate(date){
-                this.time = moment(date).format('YYYY-MM-DD')
+                this.time = moment(date).format('YYYY-MM-DD');
+                axios.post('/api/finddoctors',{date:this.time}).then((response)=>{
+                    this.doctors = response.data
+                }).catch((error)=>{alert('error')})
             }
         },
         mounted(){
