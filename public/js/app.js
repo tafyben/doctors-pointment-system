@@ -69,19 +69,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
-    return {};
+    return {
+      time: ''
+    };
   },
   components: {
     datepicker: vuejs_datepicker__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
   methods: {
     customDate: function customDate(date) {
-      return moment__WEBPACK_IMPORTED_MODULE_1___default()(date).format('YYYY-MM-DD');
+      this.time = moment__WEBPACK_IMPORTED_MODULE_1___default()(date).format('YYYY-MM-DD');
     }
   }
 });
@@ -22089,11 +22093,22 @@ var render = function () {
           _c(
             "div",
             { staticClass: "form-group search-location" },
-            [_c("datepicker", { attrs: { format: _vm.customDate } })],
+            [
+              _c("datepicker", {
+                attrs: { format: _vm.customDate, inline: true },
+                model: {
+                  value: _vm.time,
+                  callback: function ($$v) {
+                    _vm.time = $$v
+                  },
+                  expression: "time",
+                },
+              }),
+            ],
             1
           ),
         ]),
-        _vm._v(" "),
+        _vm._v("\n\n            " + _vm._s(_vm.time) + "\n\n    "),
         _vm._m(0),
       ]),
     ]),

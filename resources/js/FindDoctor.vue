@@ -4,9 +4,11 @@
             <div class="banner-wrapper">
                 <div class="search-box">
                     <div class="form-group search-location">
-                            <datepicker :format="customDate"></datepicker>
+                            <datepicker :format="customDate" v-model="time" :inline=true></datepicker>
                         </div>
                 </div>
+
+                {{time}}
 
         <div class="card mt-1">
             <div class="card-header"> Doctors available today</div>
@@ -58,7 +60,7 @@ import moment from 'moment'
     export default {
         data(){
             return{
-
+                time:''
             }
         },
         components:{
@@ -66,7 +68,7 @@ import moment from 'moment'
         },
         methods:{
             customDate(date){
-                return moment(date).format('YYYY-MM-DD')
+                this.time = moment(date).format('YYYY-MM-DD')
             }
         }
     }
