@@ -9,6 +9,7 @@
 
     <!-- Favicons -->
 
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
@@ -25,13 +26,17 @@
     <!--[if lt IE 9]>
     <script src="assets/js/html5shiv.min.js"></script>
     <script src="assets/js/respond.min.js"></script>
+ Scripts -->
+{{--    <script src="{{ asset('js/app.js') }}"defer></script>--}}
+
+
     <![endif]-->
 
 </head>
 <body>
 
 <!-- Main Wrapper -->
-<div class="main-wrapper">
+<div class="main-wrapper" id="app">
 
     <!-- Header -->
     <header class="header">
@@ -100,7 +105,7 @@
 
                 <!-- Right-aligned login and registration buttons -->
                 <div class="navbar-nav">
-                    @if(auth()->user()->role->name === 'patient')
+                    @if(auth()->check()&& auth()->user()->role->name === 'patient')
                         <a href="{{route('my.booking')}}" class="btn btn-primary mx-2">My Booking</a>
                     @endif
 
@@ -275,6 +280,7 @@
 <!-- Sticky Sidebar JS -->
 <script src="{{asset('assets/plugins/theia-sticky-sidebar/ResizeSensor.js')}}"></script>
 <script src="{{asset('assets/plugins/theia-sticky-sidebar/theia-sticky-sidebar.js')}}"></script>
+<script src="{{ mix('js/app.js') }}" defer></script>
 
 <!-- Custom JS -->
 <script src="{{asset('assets/js/script.js')}}"></script>

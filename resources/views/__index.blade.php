@@ -14,7 +14,21 @@
 
                 <!-- Search -->
                 <div class="search-box">
+                    <form action="{{url('/')}}" method="GET">
+                        <div class="form-group search-location">
+                            <input type="text" class="form-control" placeholder="Search Location (N/A)" disabled>
+                            <span class="form-text">(Not available yet)</span>
 
+
+                        <div class="form-group search-info">
+
+                            <input type="text" class="form-control datetimepicker-input" id="main-datetime" data-toggle="datetimepicker" data-target="#main-datetime" name="date" placeholder="Search Doctors.">
+                            <span class="form-text">Ex : Check available doctors</span>
+                        </div>
+
+                            <button type="submit" class="btn btn-primary search-btn"><i class="fas fa-search"></i> <span>Search</span></button>
+                        </div>
+                    </form>
 
                 </div>
                 <!-- Search -->
@@ -31,9 +45,46 @@
                 </div>
 
                 <!-- Search -->
-                <div class="search-box">
-                    {{-- date picker component --}}
-                    <find-doctor></find-doctor>
+                <div class="card mt-1">
+                    <div class="card-header"> Doctors available today</div>
+                    <div class="card-body">
+
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Department</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @forelse($doctors as $doctor)
+                                <tr>
+                                    <th scope="row">{{$doctor->doctor->id}}</th>
+                                    {{--<td><img src="#" width="80" style="border-radius: 50%;">
+                                    </td>--}}
+                                    <td>{{$doctor->doctor->name}}</td>
+                                    <td>{{$doctor->doctor->department}}</td>
+                                    <td>
+                                        <a href="{{route('create-appointment', [$doctor->user_id, $doctor->date])}}">
+                                            <button class="btn btn-success">
+                                                Book Appointment
+                                            </button>
+                                        </a>
+                                    </td>
+                                </tr>
+                            @empty
+                                <p>No doctors today</p>
+                            @endforelse
+
+
+
+                            </tbody>
+                        </table>
+
+
+                    </div>
 
                 </div>
                 <!-- Search -->
