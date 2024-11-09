@@ -63,6 +63,11 @@ import moment from 'moment'
         },
         components:{
             datepicker
+        },
+        methods:{
+            customDate(date){
+                return moment(date).format('YYYY-MM-DD')
+            }
         }
     }
 </script>

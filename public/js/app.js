@@ -78,6 +78,11 @@ __webpack_require__.r(__webpack_exports__);
   },
   components: {
     datepicker: vuejs_datepicker__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  methods: {
+    customDate: function customDate(date) {
+      return moment__WEBPACK_IMPORTED_MODULE_1___default()(date).format('YYYY-MM-DD');
+    }
   }
 });
 
