@@ -1860,6 +1860,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -24114,15 +24115,36 @@ var render = function () {
                 [
                   _vm._l(_vm.doctors, function (d, index) {
                     return _c("tr", [
-                      _c("th", { attrs: { scope: "row" } }, [
+                      _c("th", { attrs: { scope: "row", hidden: "" } }, [
                         _vm._v(_vm._s(index + 1)),
+                      ]),
+                      _vm._v(" "),
+                      _c("th", { attrs: { scope: "row" } }, [
+                        _vm._v(_vm._s(d.doctor.id)),
                       ]),
                       _vm._v(" "),
                       _c("td", [_vm._v(_vm._s(d.doctor.name))]),
                       _vm._v(" "),
                       _c("td", [_vm._v(_vm._s(d.doctor.department))]),
                       _vm._v(" "),
-                      _vm._m(1, true),
+                      _c("td", [
+                        _c(
+                          "a",
+                          {
+                            attrs: {
+                              href:
+                                "/new-appointment/" + d.user_id + "/" + d.date,
+                            },
+                          },
+                          [
+                            _c("button", { staticClass: "btn btn-success" }, [
+                              _vm._v(
+                                "\n                                Book Appointment\n                            "
+                              ),
+                            ]),
+                          ]
+                        ),
+                      ]),
                     ])
                   }),
                   _vm._v(" "),
@@ -24151,20 +24173,6 @@ var staticRenderFns = [
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Department")]),
         _vm._v(" "),
         _c("th"),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("td", [
-      _c("a", { attrs: { href: "#" } }, [
-        _c("button", { staticClass: "btn btn-success" }, [
-          _vm._v(
-            "\n                                Book Appointment\n                            "
-          ),
-        ]),
       ]),
     ])
   },

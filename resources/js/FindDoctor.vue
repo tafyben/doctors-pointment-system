@@ -25,12 +25,13 @@
                     </thead>
                     <tbody>
                     <tr v-for="(d, index) in doctors">
-                        <th scope="row">{{ index+1 }}</th>
+                        <th scope="row" hidden>{{ index+1 }}</th>
+                        <th scope="row">{{ d.doctor.id }}</th>
 
                         <td>{{ d.doctor.name }}</td>
                         <td>{{ d.doctor.department }}</td>
                         <td>
-                            <a href="#">
+                            <a :href="'/new-appointment/'+ d.user_id+'/'+d.date ">
                                 <button class="btn btn-success">
                                     Book Appointment
                                 </button>
