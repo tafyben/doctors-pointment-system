@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\AppointmentMail;
 use App\Models\Appointment;
 use App\Models\Booking;
+use App\Models\Prescription;
 use App\Models\Time;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -146,6 +147,11 @@ class FrontendController extends Controller
     {
         $doctors = Appointment::with('doctor')->whereDate('date',$request->date)->get();
         return $doctors;
+    }
+    public function myPrescription()
+    {
+        $prescriptions = Prescription::where('user_id',auth()->user()->id)->get();
+        return view('my-prescription',compact('prescriptions'));
     }
 
 

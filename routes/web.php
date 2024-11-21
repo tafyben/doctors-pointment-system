@@ -62,6 +62,7 @@ Route::group(['middleware'=>['auth','patient']],function() {
 
     Route::get('/user-profile', [\App\Http\Controllers\ProfileController::class, 'index']);
     Route::post('/profile', [\App\Http\Controllers\ProfileController::class, 'store'])->name('profile.store');
+    Route::get('/my-prescription', [\App\Http\Controllers\FrontendController::class, 'myPrescription'])->name('my.prescription');
 
     // profile picture method in controller is the only one not here
 });
