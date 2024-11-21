@@ -45,6 +45,11 @@ Route::group(['middleware'=>['auth','doctor']],function(){
 
     // prescription routes
     Route::get('patient-today', [\App\Http\Controllers\PresciptionController::class, 'index'])->name('patient.today');
+
+    Route::post('/prescription', [\App\Http\Controllers\PresciptionController::class, 'store'])->name('prescription');
+
+    Route::get('/prescription/{userId}/{date}', [\App\Http\Controllers\PresciptionController::class, 'show'])->name('prescription.show');
+    Route::get('/prescribed-patients', [\App\Http\Controllers\PresciptionController::class, 'patientsFromPrescription'])->name('prescribed.patients');
 });
 
 Route::get('/new-appointment/{doctorId}/{date}', [FrontendController::class, 'show'])->name('create-appointment');
