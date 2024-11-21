@@ -9,7 +9,6 @@
 
     <!-- Favicons -->
 
-    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
@@ -21,6 +20,7 @@
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+
 
 
 

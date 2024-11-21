@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     <title>Doctor Appointment - Dashboard</title>
 
+
+
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('admin/assets/img/')}}">
 
@@ -29,6 +31,7 @@
 {{--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.38.0/css/tempusdominus-bootstrap-4.min.css" crossorigin="anonymous" />--}}
     <!-- Main CSS -->
     <link rel="stylesheet" href="{{asset('admin/assets/css/style.css')}}">
+    <script src="{{ mix('js/app.js') }}" defer></script>
 
     <!--[if lt IE 9]>
     <script src="{{asset('admin/assets/js/html5shiv.min.js')}}"></script>
@@ -38,7 +41,7 @@
 <body>
 
 <!-- Main Wrapper -->
-<div class="main-wrapper">
+<div class="main-wrapper" id="app">
 
     <!-- Header -->
     <div class="header">
@@ -202,12 +205,13 @@
 <script src="{{asset('admin/assets/plugins/datatables/datatables.min.js')}}"></script>
 <script src="{{asset('admin/assets/plugins/tempusdominus-bootstrap-4/build/js/tempusdominus-bootstrap-4.min.js')}}"></script>
 
-{{--new scripts --}}
-{{--<script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.38.0/js/tempusdominus-bootstrap-4.min.js" crossorigin="anonymous"></script>--}}
+new scripts
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.38.0/js/tempusdominus-bootstrap-4.min.js" crossorigin="anonymous"></script>
 
-{{--<script src="{{asset('admin/assets/plugins/datedropper/datedropper.min.js')}}"></script>--}}
+<script src="{{asset('admin/assets/plugins/datedropper/datedropper.min.js')}}"></script>
 <!-- Custom JS -->
 <script  src="{{asset('admin/assets/js/script.js')}}"></script>
+
 
 
 
