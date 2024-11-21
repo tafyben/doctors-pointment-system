@@ -20,9 +20,6 @@
     <link rel="stylesheet" href="{{asset('admin/assets/css/feathericon.min.css')}}">
 
     <link rel="stylesheet" href="a{{asset('admin/assets/plugins/morris/morris.css')}}">
-    <!-- Datatables CSS -->
-    <link rel="stylesheet" href="{{asset('admin/assets/plugins/datatables/datatables.min.css')}}">
-    <link rel="stylesheet" href="{{asset('admin/assets/plugins/tempusdominus-bootstrap-4/build/css/tempusdominus-bootstrap-4.min.css')}}">
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="{{asset('admin/assets/css/style.css')}}">
@@ -160,7 +157,58 @@
     <!-- /Header -->
 
     <!-- Sidebar -->
-    @include('admin.layouts.sidebar')
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-inner slimscroll">
+            <div id="sidebar-menu" class="sidebar-menu">
+                <ul>
+                    <li class="menu-title">
+                        <span>Main</span>
+                    </li>
+                    <li class="active">
+                        <a href="#"><i class="fe fe-home"></i> <span>Dashboard</span></a>
+                    </li>
+                    @if(auth()->check()&& auth()->user()->role->name === 'admin')
+                        <li class="submenu">
+                            <a href="#"><i class="fe fe-layout"></i> <span> Doctors</span> <span class="menu-arrow"></span></a>
+                            <ul style="display: none;">
+                                <li><a href="{{route('doctor.index')}}">All Doctors</a></li>
+                                <li><a href="{{route('doctor.create')}}">Create Appointment</a></li>
+                            </ul>
+                        </li>
+                    @endif
+                    @if(auth()->check()&& auth()->user()->role->name === 'doctor')
+                        <li class="submenu">
+                            <a href="#"><i class="fe fe-users"></i> <span> Appointments</span> <span class="menu-arrow"></span></a>
+                            <ul style="display: none;">
+                                <li><a href="{{route('appointment.index')}}">All Appointments</a></li>
+                                <li><a href="{{route('appointment.create')}}">Add Appointment</a></li>
+                            </ul>
+                        </li>
+                    @endif
+                    <li class="submenu">
+                        <a href="#"><i class="fe fe-user-plus"></i> <span> Users</span> <span class="menu-arrow"></span></a>
+                        <ul style="display: none;">
+                            <li><a href="{{route('doctor.index')}}">All Users</a></li>
+                            <li><a href="#">Add User</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#"><i class="fe fe-star-o"></i> <span>Reviews</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fe fe-activity"></i> <span>Transactions</span></a>
+                    </li>
+                    <li class="menu-title">
+                        <span>Pages</span>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fe fe-user-plus"></i> <span>Profile</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
     <!-- /Sidebar -->
 
@@ -183,7 +231,6 @@
 
 <!-- Bootstrap Core JS -->
 <script src="{{asset('admin/assets/js/popper.min.js')}}"></script>
-<script src="{{asset('admin/assets/js/moment/moment.js')}}"></script>
 <script src="{{asset('admin/assets/js/bootstrap.min.js')}}"></script>
 
 <!-- Slimscroll JS -->
@@ -193,19 +240,10 @@
 <script src="{{asset('admin/assets/plugins/morris/morris.min.js')}}"></script>
 <script src="a{{asset('dmin/assets/js/chart.morris.js')}}"></script>
 
-<!-- Datatables JS -->
-<script src="{{asset('admin/assets/plugins/datatables/jquery.dataTables.min.js')}}"></script>
-<script src="{{asset('admin/assets/plugins/datatables/datatables.min.js')}}"></script>
-<script src="{{asset('admin/assets/plugins/tempusdominus-bootstrap-4/build/js/tempusdominus-bootstrap-4.min.js')}}"></script>
-
-
-<script src="{{asset('admin/assets/plugins/datedropper/datedropper.min.js')}}"></script>
-
 <!-- Custom JS -->
 <script  src="{{asset('admin/assets/js/script.js')}}"></script>
-<script src="{{ mix('js/app.js') }}" defer></script>
-@stack('scripts')
 
 </body>
 
+<!-- Mirrored from dreamguys.co.in/demo/doccure/admin/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Nov 2019 04:12:34 GMT -->
 </html>

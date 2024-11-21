@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from dreamguys.co.in/demo/doccure/admin/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Nov 2019 04:12:20 GMT -->
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-    <title>Doccure - Dashboard</title>
+    <title>Doctor Appointment - Dashboard</title>
+
+
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="admin/assets/img/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('admin/assets/img/')}}">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{asset('admin/assets/css/bootstrap.min.css')}}">
@@ -19,13 +20,18 @@
     <!-- Feathericon CSS -->
     <link rel="stylesheet" href="{{asset('admin/assets/css/feathericon.min.css')}}">
 
-    <link rel="stylesheet" href="a{{asset('admin/assets/plugins/morris/morris.css')}}">
+    <!-- Select2 CSS -->
+    <link rel="stylesheet" href="{{asset('admin/assets/css/select2.min.css')}}">
+
+    <link rel="stylesheet" href="{{asset('admin/assets/plugins/morris/morris.css')}}">
     <!-- Datatables CSS -->
     <link rel="stylesheet" href="{{asset('admin/assets/plugins/datatables/datatables.min.css')}}">
     <link rel="stylesheet" href="{{asset('admin/assets/plugins/tempusdominus-bootstrap-4/build/css/tempusdominus-bootstrap-4.min.css')}}">
 
+{{--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.38.0/css/tempusdominus-bootstrap-4.min.css" crossorigin="anonymous" />--}}
     <!-- Main CSS -->
     <link rel="stylesheet" href="{{asset('admin/assets/css/style.css')}}">
+    <script src="{{ mix('js/app.js') }}" defer></script>
 
     <!--[if lt IE 9]>
     <script src="{{asset('admin/assets/js/html5shiv.min.js')}}"></script>
@@ -35,18 +41,18 @@
 <body>
 
 <!-- Main Wrapper -->
-<div class="main-wrapper">
+<div class="main-wrapper" id="app">
 
     <!-- Header -->
     <div class="header">
 
         <!-- Logo -->
         <div class="header-left">
-            <a href="index.html" class="logo">
-                <img src="assets/img/logo.png" alt="Logo">
+            <a href="#" class="logo">
+                <img src="{{asset('admin/assets/img/logo.png')}}" alt="Logo">
             </a>
-            <a href="index.html" class="logo logo-small">
-                <img src="assets/img/logo-small.png" alt="Logo" width="30" height="30">
+            <a href="#" class="logo logo-small">
+                <img src="{{asset('admin/assets/img/logo-small.png')}}" alt="Logo" width="30" height="30">
             </a>
         </div>
         <!-- /Logo -->
@@ -157,14 +163,13 @@
         <!-- /Header Right Menu -->
 
     </div>
-    <!-- /Header -->
+    <!-- main header -->
 
-    <!-- Sidebar -->
-    @include('admin.layouts.sidebar')
+    <!-- sidebar -->
 
-    <!-- /Sidebar -->
+    <!--  sidebar -->
 
-    <!-- Page Wrapper -->
+    <!-- page wrapper(main content wrapper - usazokanganwa) -->
     <div class="page-wrapper">
 
         <div class="content container-fluid">
@@ -173,7 +178,7 @@
             <!-- main content area -->
         </div>
     </div>
-    <!-- /Page Wrapper -->
+    <!-- page wrapper(main content wrapper) -->
 
 </div>
 <!-- /Main Wrapper -->
@@ -191,21 +196,25 @@
 
 <script src="{{asset('admin/assets/plugins/raphael/raphael.min.js')}}"></script>
 <script src="{{asset('admin/assets/plugins/morris/morris.min.js')}}"></script>
-<script src="a{{asset('dmin/assets/js/chart.morris.js')}}"></script>
+<!-- Select2 JS -->
+<script src="{{asset('admin/assets/js/select2.min.js')}}"></script>
+<script src="{{asset('admin/assets/js/chart.morris.js')}}"></script>
 
 <!-- Datatables JS -->
 <script src="{{asset('admin/assets/plugins/datatables/jquery.dataTables.min.js')}}"></script>
 <script src="{{asset('admin/assets/plugins/datatables/datatables.min.js')}}"></script>
 <script src="{{asset('admin/assets/plugins/tempusdominus-bootstrap-4/build/js/tempusdominus-bootstrap-4.min.js')}}"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.38.0/js/tempusdominus-bootstrap-4.min.js" crossorigin="anonymous"></script>
 
 <script src="{{asset('admin/assets/plugins/datedropper/datedropper.min.js')}}"></script>
-
 <!-- Custom JS -->
 <script  src="{{asset('admin/assets/js/script.js')}}"></script>
-<script src="{{ mix('js/app.js') }}" defer></script>
-@stack('scripts')
 
+
+
+
+@stack('scripts')
 </body>
 
 </html>

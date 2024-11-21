@@ -20,6 +20,7 @@
                                 <th scope="col">Time</th>
                                 <th scope="col">Doctor</th>
                                 <th scope="col">Status</th>
+
                             </tr>
                             </thead>
                             <tbody>

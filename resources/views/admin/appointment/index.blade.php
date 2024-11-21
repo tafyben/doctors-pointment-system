@@ -254,12 +254,15 @@
                 font-size: 20px;
             }
         </style>
-        <script type="text/javascript">
+        <<script type="text/javascript">
             $(function () {
                 $('#main-datetime').datetimepicker({
-                    format: 'L'
+                    format: 'YYYY-MM-DD',
+                    minDate: moment()
+
                 });
             });
+        </script>
         </script>
     @endpush
 @endsection

@@ -26,6 +26,7 @@
                                 <th scope="col">Time</th>
                                 <th scope="col">Doctor</th>
                                 <th scope="col">Status</th>
+                                <th scope="col">Pres</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -38,6 +39,7 @@
                                     <td>{{$booking->user->gender}}</td>
                                     <td>{{$booking->time}}</td>
                                     <td>{{$booking->doctor->name}}</td>
+                                    <td>{{$booking->doctor->status}}</td>
                                     <td>
                                         <!-- modal -->
                                         @if(!App\Models\Prescription::where('date',date('Y-m-d'))->where('doctor_id',auth()->user()->id)->where('user_id',$booking->user->id)->exists())

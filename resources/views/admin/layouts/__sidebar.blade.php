@@ -19,36 +19,17 @@
                 @endif
                 @if(auth()->check()&& auth()->user()->role->name === 'doctor')
                 <li class="submenu">
-                    <a href="#"><i class="fe fe-users"></i> <span> Appointment Time</span> <span class="menu-arrow"></span></a>
+                    <a href="#"><i class="fe fe-users"></i> <span> Appointments</span> <span class="menu-arrow"></span></a>
                     <ul style="display: none;">
                         <li><a href="{{route('appointment.index')}}">All Appointments</a></li>
                         <li><a href="{{route('appointment.create')}}">Add Appointment</a></li>
                     </ul>
                 </li>
                 @endif
-                @if(auth()->check()&& auth()->user()->role->name === 'doctor')
                 <li class="submenu">
-                    <a href="#"><i class="fe fe-users"></i> <span> Patients</span> <span class="menu-arrow"></span></a>
-                    <ul style="display: none;">
-                        <li><a href="{{route('patients.today')}}" class="menu-item">Patients(today)</a></li>
-                        <li><a href="{{route('prescribed.patients')}}" class="menu-item">All patients(prescription)</a></li>
-                    </ul>
-                </li>
-                @endif
-                @if(auth()->check()&& auth()->user()->role->name === 'admin')
-                <li class="submenu">
-                    <a href="#"><i class="fe fe-users"></i> <span> Patient Appointment</span> <span class="menu-arrow"></span></a>
-                    <ul style="display: none;">
-                        <li><a href="{{route('patient')}}" class="menu-item">Today Appointment</a></li>
-                            <li><a href="{{route('all.appointments')}}" class="menu-item">All Time Appointment</a></li>
-                    </ul>
-                </li>
-                @endif
-                <li class="submenu">
-                    <a href="#"><i class="fe fe-user-plus"></i> <span> Doctors/Users</span> <span class="menu-arrow"></span></a>
+                    <a href="#"><i class="fe fe-user-plus"></i> <span> Users</span> <span class="menu-arrow"></span></a>
                     <ul style="display: none;">
                         <li><a href="{{route('doctor.index')}}">All Users</a></li>
-                        <li><a href="{{route('doctor.index')}}">View</a></li>
                         <li><a href="#">Add User</a></li>
                     </ul>
                 </li>
