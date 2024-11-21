@@ -8,6 +8,7 @@
                 <li class="active">
                     <a href="#"><i class="fe fe-home"></i> <span>Dashboard</span></a>
                 </li>
+                @if(auth()->check()&& auth()->user()->role->name === 'admin')
                 <li class="submenu">
                     <a href="#"><i class="fe fe-layout"></i> <span> Doctors</span> <span class="menu-arrow"></span></a>
                     <ul style="display: none;">
@@ -15,13 +16,16 @@
                         <li><a href="{{route('doctor.create')}}">Create Appointment</a></li>
                     </ul>
                 </li>
+                @endif
+                @if(auth()->check()&& auth()->user()->role->name === 'doctor')
                 <li class="submenu">
-                    <a href="#"><i class="fe fe-users"></i> <span> Specialities</span> <span class="menu-arrow"></span></a>
+                    <a href="#"><i class="fe fe-users"></i> <span> Appointments</span> <span class="menu-arrow"></span></a>
                     <ul style="display: none;">
-                        <li><a href="#">All Specialities</a></li>
-                        <li><a href="#">Add Speciality</a></li>
+                        <li><a href="{{route('appointment.index')}}">All Appointments</a></li>
+                        <li><a href="{{route('appointment.create')}}">Add Appointment</a></li>
                     </ul>
                 </li>
+                @endif
                 <li class="submenu">
                     <a href="#"><i class="fe fe-user-plus"></i> <span> Users</span> <span class="menu-arrow"></span></a>
                     <ul style="display: none;">
@@ -29,13 +33,15 @@
                         <li><a href="#">Add User</a></li>
                     </ul>
                 </li>
+                @if(auth()->check()&& auth()->user()->role->name === 'admin')
                 <li class="submenu">
-                    <a href="#"><i class="fe fe-user"></i> <span> Patients</span> <span class="menu-arrow"></span></a>
+                    <a href="#"><i class="fe fe-user"></i> <span> Patient Appointment</span> <span class="menu-arrow"></span></a>
                     <ul style="display: none;">
-                        <li><a href="#">All Patients</a></li>
-                        <li><a href="#">Add Patient</a></li>
+                        <li><a href="{{route('patient')}}">Today Patients</a></li>
+                        <li><a href="{{route('all.appointments')}}">All Appointment</a></li>
                     </ul>
                 </li>
+                @endif
                 <li>
                     <a href="#"><i class="fe fe-star-o"></i> <span>Reviews</span></a>
                 </li>

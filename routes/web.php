@@ -32,6 +32,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::group(['middleware'=>['auth','admin']],function() {
     Route::resource('doctor', \App\Http\Controllers\DoctorController::class);
     Route::get('/patients',[\App\Http\Controllers\PatientListController::class, 'index'])->name('patient');
+    Route::get('/patients/all',[\App\Http\Controllers\PatientListController::class, 'allTimeAppointment'])->name('all.appointments');
     Route::get('/status/update/{id}',[\App\Http\Controllers\PatientListController::class, 'toggleStatus'])->name('update.status');
 });
 
@@ -41,6 +42,9 @@ Route::group(['middleware'=>['auth','doctor']],function(){
     Route::resource('appointment',AppointmentController::class);
     Route::post('/appointment/check',[AppointmentController::class, 'check'])->name('appointment.check');
     Route::post('/appointment/update',[AppointmentController::class ,'updateTime'])->name('update');
+
+    // prescription routes
+    Route::get('patient-today', [\App\Http\Controllers\PresciptionController::class, 'index'])->name('patient.today');
 });
 
 Route::get('/new-appointment/{doctorId}/{date}', [FrontendController::class, 'show'])->name('create-appointment');

@@ -163,7 +163,7 @@
     <!-- main header -->
 
     <!-- sidebar -->
-    @include('admin/layouts/sidebar')
+    @include('admin.layouts.sidebar')
     <!--  sidebar -->
 
     <!-- page wrapper(main content wrapper - usazokanganwa) -->
