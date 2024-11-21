@@ -135,12 +135,16 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Specialist:</label>
-                                            <input type="text" class="form-control @error('department') is-invalid @enderror" name="department" value="{{old('department')}}">
-                                            @error('department')
+                                            <select class="select form-control @error('department') is-invalid @enderror" name="department">
+                                                <option value="">Select Role</option>
+                                                @foreach(App\Models\Department::all() as $d)
+                                                    <option value="{{$d->department}}">{{$d->department}}</option>
+                                                @endforeach
+                                            </select>
                                             <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+
                                     </span>
-                                            @enderror
+
                                         </div>
 
                                     </div>
