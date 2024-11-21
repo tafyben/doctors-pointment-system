@@ -44,6 +44,7 @@
                     </ul>
                 </li>
                 @endif
+                @if(auth()->check()&& auth()->user()->role->name === 'admin')
                 <li class="submenu">
                     <a href="#"><i class="fe fe-user-plus"></i> <span> Doctors/Users</span> <span class="menu-arrow"></span></a>
                     <ul style="display: none;">
@@ -52,6 +53,16 @@
                         <li><a href="#">Add User</a></li>
                     </ul>
                 </li>
+                @endif
+                @if(auth()->check()&& auth()->user()->role->name === 'admin')
+                    <li class="submenu">
+                        <a href="#"><i class="fe fe-users"></i> <span> Department</span> <span class="menu-arrow"></span></a>
+                        <ul style="display: none;">
+                            <li><a href="{{route('department.index')}}" class="menu-item">All Departments</a></li>
+                            <li><a href="{{route('department.create')}}" class="menu-item">Add Department</a></li>
+                        </ul>
+                    </li>
+                @endif
 
                 <li>
                     <a href="#"><i class="fe fe-star-o"></i> <span>Reviews</span></a>

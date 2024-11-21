@@ -44,7 +44,7 @@
                                 <div class="form-group">
 
                                     <label for="">Department name</label>
-                                    <input type="text" name="department" class="form-control @error('department') is-invalid @enderror" placeholder="department name" value="                   {{old('department')}}">
+                                    <input type="text" name="department" class="form-control @error('department') is-invalid @enderror" placeholder="department name" value="{{old('department')}}">
                                     @error('department')
                                     <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
