@@ -7,22 +7,7 @@
                 <div class="card">
 
                     <div class="card-header">Appointments({{$bookings->count()}})</div>
-                    <form action="{{route('patient')}}" method="GET">
 
-                        <div class="card-header">
-                            Filter:
-                            <div class="row">
-                                <div class="col-md-10">
-                                    <input type="text" class="form-control datetimepicker-input" id="main-datetime" data-toggle="datetimepicker" data-target="#main-datetime" name="date">
-                                </div>
-                                <div class="col-md-2">
-                                    <button type="submit" class="btn btn-primary">Search</button>
-
-                                </div>
-                            </div>
-
-                        </div>
-                    </form>
 
 
                     <div class="card-body">
@@ -50,11 +35,10 @@
                                     <td>{{$booking->time}}</td>
                                     <td>{{$booking->doctor->name}}</td>
                                     <td>
-                                        @if($booking->status==0)
-                                            <a href="{{route('update.status',[$booking->id])}}"><button class="btn btn-primary"> Pending</button></a>
-                                        @else
-                                            <a href="{{route('update.status',[$booking->id])}}"><button class="btn btn-success"> Checked</button></a>
-                                        @endif
+                                        <!-- modal -->
+                                        <a href="{{route('prescription.show',[$patient->user_id,$patient->date])}}" class="btn btn-secondary">View prescription</a>
+
+
                                     </td>
                                 </tr>
                             @empty

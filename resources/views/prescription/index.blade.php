@@ -5,6 +5,11 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
+                    @if(Session::has('message'))
+                        <div class="alert alert-success">
+                            {{Session::get('message')}}
+                        </div>
+                    @endif
                     <div class="card-header">Appointments({{$bookings->count()}})</div>
 
 
@@ -34,10 +39,15 @@
                                     <td>{{$booking->time}}</td>
                                     <td>{{$booking->doctor->name}}</td>
                                     <td>
-                                        @if($booking->status==0)
-                                            <a href="{{route('update.status',[$booking->id])}}"><button class="btn btn-primary"> Pending</button></a>
+                                        <!-- modal -->
+                                        @if(!App\Prescription::where('date',date('Y-m-d'))->where('doctor_id',auth()->user()->id)->where('user_id',$booking->user->id)->exists())
+                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{$booking->user_id}}">
+                                                Write prescription
+                                            </button>
+                                            @include('prescription.form')
+
                                         @else
-                                            <a href="{{route('update.status',[$booking->id])}}"><button class="btn btn-success"> Checked</button></a>
+                                            <a href="{{route('prescription.show',[$booking->user_id,$booking->date])}}" class="btn btn-secondary">View prescription</a>
                                         @endif
                                     </td>
                                 </tr>
