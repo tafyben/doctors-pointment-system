@@ -1,7 +1,10 @@
 <?php
 
 use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\PatientListController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,10 +33,12 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 Route::group(['middleware'=>['auth','admin']],function() {
-    Route::resource('doctor', \App\Http\Controllers\DoctorController::class);
-    Route::get('/patients',[\App\Http\Controllers\PatientListController::class, 'index'])->name('patient');
-    Route::get('/patients/all',[\App\Http\Controllers\PatientListController::class, 'allTimeAppointment'])->name('all.appointments');
-    Route::get('/status/update/{id}',[\App\Http\Controllers\PatientListController::class, 'toggleStatus'])->name('update.status');
+    Route::resource('doctor', DoctorController::class);
+    Route::get('/patients',[PatientListController::class, 'index'])->name('patient');
+    Route::get('/patients/all',[PatientListController::class, 'allTimeAppointment'])->name('all.appointments');
+    Route::get('/status/update/{id}',[PatientListController::class, 'toggleStatus'])->name('update.status');
+
+    Route::resource('department',DepartmentController::class);
 });
 
 
