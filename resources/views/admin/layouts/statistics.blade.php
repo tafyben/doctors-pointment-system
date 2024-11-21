@@ -88,9 +88,9 @@
         <div class="card">
             <div class="card-body">
                 <div class="dash-widget-header">
-                                            <span class="dash-widget-icon text-warning border-warning">
-                                                <i class="fe fe-pencil"></i>
-                                            </span>
+                    <span class="dash-widget-icon text-warning border-warning">
+                        <i class="fe fe-pencil"></i>
+                    </span>
                     <div class="dash-count">
                         <h3>{{App\Models\Prescription::count()}}</h3>
                     </div>
