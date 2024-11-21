@@ -14,7 +14,7 @@ class DashboardController extends Controller
     public function index()
     {
         if(Auth::user()->role->name=='patient'){
-            return view('home');
+            return view('patient-dashboard');
         }
 
         return view('admin-dashboard');
