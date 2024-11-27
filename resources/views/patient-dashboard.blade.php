@@ -32,6 +32,7 @@
 
 
                     {{ __('You are logged in!') }}
+                        <b><h2>Welcome {{Auth::user()->name}}</h2> </b>
                 </div>
             </div>
         </div>

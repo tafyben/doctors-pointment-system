@@ -102,6 +102,9 @@
                 @if(auth()->check() && auth()->user()->role->name === 'patient')
                     <a href="{{ route('my.booking') }}" class="btn btn-primary mx-2">My Booking</a>
                 @endif
+                @if(auth()->check() && auth()->user()->role->name === 'patient')
+                    <a href="{{ url('/') }}" class="btn btn-outline-success mx-2">Book Appointment</a>
+                @endif
                 @if(auth()->check()&& auth()->user()->role->name === 'patient')
                         <a href="{{ route('my.prescription') }}" class="btn btn-secondary mx-2">{{ __('My Prescriptions') }}</a>
                 @endif

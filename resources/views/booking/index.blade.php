@@ -1,9 +1,24 @@
-@extends('layouts.app')
+@extends('layouts.frontend')
 
 @section('content')
+<div class="breadcrumb-bar">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-md-12 col-12">
+                <nav aria-label="breadcrumb" class="page-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{{url("/")}}">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">My Bookings</li>
+                    </ol>
+                </nav>
+                <h2 class="breadcrumb-title">My Bookings</h2>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-10">
+        <div class="col-md-10 m-5">
             <div class="card">
                 <div class="card-header">Your appointments({{$appointments->count()}})</div>
 
