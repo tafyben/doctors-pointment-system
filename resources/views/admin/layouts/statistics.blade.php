@@ -41,6 +41,7 @@
             </div>
         </div>
     </div>
+    @if(auth()->check()&& auth()->user()->role->name === 'admin')
     <div class="col-xl-3 col-sm-6 col-12">
         <div class="card">
             <div class="card-body">
@@ -62,6 +63,7 @@
             </div>
         </div>
     </div>
+    @endif
     <div class="col-xl-3 col-sm-6 col-12">
         <div class="card">
             <div class="card-body">

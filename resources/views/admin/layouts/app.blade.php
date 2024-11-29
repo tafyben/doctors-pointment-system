@@ -7,7 +7,6 @@
     <title>UclanDoc - Admin area</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="#">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{asset('admin/assets/css/bootstrap.min.css')}}">
@@ -41,11 +40,11 @@
 
         <!-- Logo -->
         <div class="header-left">
-            <a href="index.html" class="logo">
-                <img src="assets/img/logo.png" alt="Logo">
+            <a href="{{url('/dashboard')}}" class="logo">
+{{--                <img src="#" alt="UclanDoc Logo">--}}
             </a>
-            <a href="index.html" class="logo logo-small">
-                <img src="assets/img/logo-small.png" alt="Logo" width="30" height="30">
+            <a href="{{url('/dashboard')}}" class="logo logo-small">
+{{--                <img src="#" alt="UclanDoc Logo" width="30" height="30">--}}
             </a>
         </div>
         <!-- /Logo -->

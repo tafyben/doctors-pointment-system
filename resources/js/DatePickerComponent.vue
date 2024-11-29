@@ -12,7 +12,6 @@
     <div class="card mt-1">
         <div class="card-header"> Doctors available today</div>
         <div class="card-body">
-
             <table class="table table-striped">
                 <thead>
                 <tr>
@@ -41,17 +40,12 @@
 
                 </tbody>
             </table>
-
-
         </div>
-
     </div>
 </template>
-
 <script>
 import DatePicker from '@vuepic/vue-datepicker';
 import '@vuepic/vue-datepicker/dist/main.css';
-
 export default {
     components: {
         DatePicker,

@@ -7,9 +7,6 @@
                             <datepicker :format="customDate" v-model="time" :disabledDates="disabledDates" :inline=true></datepicker>
                         </div>
                 </div>
-
-
-
         <div class="card mt-1">
             <div class="card-header"> Doctors available today</div>
             <div class="card-body">

@@ -5,17 +5,23 @@
                 <li class="menu-title">
                     <span>Main</span>
                 </li>
-                <li class="active">
-                    <a href="#"><i class="fe fe-home"></i> <span>Dashboard</span></a>
+                <li class="{{ Request::is('dashboard') ? 'active' : '' }}">
+                    <a href="{{ url('/dashboard') }}"><i class="fe fe-home"></i> <span>Dashboard</span></a>
                 </li>
-                @if(auth()->check()&& auth()->user()->role->name === 'admin')
-                <li class="submenu">
-                    <a href="#"><i class="fe fe-layout"></i> <span> Doctors</span> <span class="menu-arrow"></span></a>
-                    <ul style="display: none;">
-                        <li><a href="{{route('doctor.index')}}">All Doctors</a></li>
-                        <li><a href="{{route('doctor.create')}}">Create Appointment</a></li>
-                    </ul>
-                </li>
+
+                @if(auth()->check() && auth()->user()->role->name === 'admin')
+                    <li class="submenu {{ Request::is('doctor*') ? 'active' : '' }}">
+                        <a href="#"><i class="fe fe-layout"></i> <span>Doctors</span> <span class="menu-arrow"></span></a>
+                        <ul style="display: none;">
+                            <li class="{{ Request::is('doctor*') && !Request::is('doctor/create') ? 'active' : '' }}">
+                                <a href="{{ route('doctor.index') }}">All Doctors</a>
+                            </li>
+                            <li class="{{ Request::is('doctor/create') ? 'active' : '' }}">
+                                <a href="{{ route('doctor.create') }}">Create Appointment</a>
+                            </li>
+                        </ul>
+                    </li>
+
                 @endif
                 @if(auth()->check()&& auth()->user()->role->name === 'doctor')
                 <li class="submenu">
@@ -63,12 +69,19 @@
                         </ul>
                     </li>
                 @endif
+                <style>
+                    .disabled {
+                        pointer-events: none;  /* Prevents clicking */
+                        opacity: 0.5;          /* Makes the item look disabled */
+                        cursor: not-allowed;   /* Change cursor to indicate it's disabled */
+                    }
+                </style>
 
                 <li>
-                    <a href="#"><i class="fe fe-star-o"></i> <span>Reviews</span></a>
+                    <a href="#" class="disabled"><i class="fe fe-star-o"></i> <span>Reviews - Coming Soon</span></a>
                 </li>
                 <li>
-                    <a href="#"><i class="fe fe-activity"></i> <span>Transactions</span></a>
+                    <a href="#" class="disabled"><i class="fe fe-activity"></i> <span>Transactions</span></a>
                 </li>
                 <li class="menu-title">
                     <span>Pages</span>

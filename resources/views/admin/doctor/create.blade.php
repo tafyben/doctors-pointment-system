@@ -121,8 +121,8 @@
                                             <label>Gender:</label>
                                             <select class="select form-control @error('gender') is-invalid @enderror" name="gender">
                                                 <option value="">Select Gender</option>
-                                                <option value="1">Male</option>
-                                                <option value="2">Female</option>
+                                                <option value="male">Male</option>
+                                                <option value="female">Female</option>
                                             </select>
                                             @error('gender')
                                             <span class="invalid-feedback" role="alert">

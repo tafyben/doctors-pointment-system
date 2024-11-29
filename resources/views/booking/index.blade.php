@@ -30,7 +30,7 @@
                           <th scope="col">Doctor</th>
                           <th scope="col">Time</th>
                           <th scope="col">Date for</th>
-                          <th scope="col">Created date</th>
+{{--                          <th scope="col">Created date</th>--}}
                           <th scope="col">Status</th>
                         </tr>
                       </thead>
@@ -41,7 +41,7 @@
                           <td>{{$appointment->doctor->name}}</td>
                           <td>{{$appointment->time}}</td>
                           <td>{{$appointment->date}}</td>
-                          <td>{{$appointment->created_at}}</td>
+{{--                          <td>{{$appointment->created_at}}</td>--}}
                           <td>
                               @if($appointment->status==0)
                               <button class="btn btn-primary">Not visited</button>

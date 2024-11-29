@@ -50,7 +50,6 @@ class FrontendController extends Controller
         if($check){
             return redirect()->back()->with('error-message','You already have an appointment booked. Please wait before scheduling the next one.');
         }
-
         Booking::create([
             'user_id'=> auth()->user()->id,
             'doctor_id'=> $request->doctorId,
@@ -58,35 +57,28 @@ class FrontendController extends Controller
             'date'=> $request->date,
             'status'=>0
         ]);
-
         Time::where('appointment_id',$request->appointmentId)
             ->where('time',$request->time)
             ->update(['status'=>1]);
-
         $doctorName = User::where('id',$request->doctorId)->first();
         $mailData = [
             'name'=>auth()->user()->name,
             'time'=>$request->time,
             'date'=>$request->date,
             'doctorName' => $doctorName->name
-
         ];
         try{
              Mail::to(auth()->user()->email)->send(new AppointmentMail($mailData));
 
         }catch(\Exception $e){
-
         }
-
         return redirect()->back()->with('message','Your appointment was booked.');
     }
-
     public function myBookings()
     {
         $appointments = Booking::latest()->where('user_id',auth()->user()->id)->get();
         return view('booking.index',compact('appointments'));
     }
-
     public function checkBookingTimeInterval()
     {
         return Booking::orderby('id','desc')
@@ -94,7 +86,6 @@ class FrontendController extends Controller
             ->whereDate('created_at',date('Y-m-d'))
             ->exists();
     }
-
     /**
      * Display the specified resource.
      */

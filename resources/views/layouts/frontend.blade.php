@@ -58,7 +58,7 @@
                 </div>
                 <ul class="main-nav">
                     <li class="active">
-                        <a href="#">Home</a>
+                        <a href="{{url("/")}}">Home</a>
                     </li>
                     <li class="has-submenu">
                         <a href="#">Pages <i class="fas fa-chevron-down"></i></a>

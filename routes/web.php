@@ -37,7 +37,6 @@ Route::group(['middleware'=>['auth','admin']],function() {
     Route::get('/patients',[PatientListController::class, 'index'])->name('patient');
     Route::get('/patients/all',[PatientListController::class, 'allTimeAppointment'])->name('all.appointments');
     Route::get('/status/update/{id}',[PatientListController::class, 'toggleStatus'])->name('update.status');
-
     Route::resource('department',DepartmentController::class);
 });
 
@@ -47,12 +46,9 @@ Route::group(['middleware'=>['auth','doctor']],function(){
     Route::resource('appointment',AppointmentController::class);
     Route::post('/appointment/check',[AppointmentController::class, 'check'])->name('appointment.check');
     Route::post('/appointment/update',[AppointmentController::class ,'updateTime'])->name('update');
-
     // prescription routes
-    Route::get('patient-today', [\App\Http\Controllers\PresciptionController::class, 'index'])->name('patients.today');
-
+    Route::get('/patient-today', [\App\Http\Controllers\PresciptionController::class, 'index'])->name('patients.today');
     Route::post('/prescription', [\App\Http\Controllers\PresciptionController::class, 'store'])->name('prescription');
-
     Route::get('/prescription/{userId}/{date}', [\App\Http\Controllers\PresciptionController::class, 'show'])->name('prescription.show');
     Route::get('/prescribed-patients', [\App\Http\Controllers\PresciptionController::class, 'patientsFromPrescription'])->name('prescribed.patients');
 });
